@@ -1,28 +1,387 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>SPS — Structural Projection Surface</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MEDS — Minimal Explanation Decision System</title>
+  <meta name="description" content="A decision system whose actions are invariant under explanation collapse.">
+  <meta property="og:title" content="MEDS — Minimal Explanation Decision System">
+  <meta property="og:description" content="Decision first. Explanation later. Growth without action.">
+  <meta property="og:image" content="assets/meds_brain_diagram.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="MEDS — Minimal Explanation Decision System">
+  <meta name="twitter:description" content="A decision system whose actions are invariant under explanation collapse.">
+  <meta name="twitter:image" content="assets/meds_brain_diagram.png">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #0a0e1a;
+      color: #e0e6f0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+      line-height: 1.6;
+      min-height: 100vh;
+    }
+    .container { max-width: 1200px; margin: 0 auto; padding: 2rem 1.5rem; }
+
+    .hero-title {
+      font-size: 3.2rem; font-weight: 700; color: #00d4aa;
+      text-align: center; margin-bottom: 0.2rem; letter-spacing: -1px;
+    }
+    .hero-sub {
+      font-size: 1.15rem; color: #8892a4; text-align: center;
+      margin-bottom: 2rem; font-style: italic;
+    }
+    .definition-box {
+      font-size: 1.2rem; font-weight: 600; color: #00d4aa;
+      text-align: center; padding: 1.2rem; background: #111827;
+      border-radius: 10px; border: 1px solid #1e293b; margin: 1rem auto;
+      max-width: 800px;
+    }
+
+    .section-divider { border: none; border-top: 1px solid #1e293b; margin: 3rem 0; }
+    .section-title { font-size: 1.5rem; font-weight: 700; color: #e0e6f0; margin-bottom: 1.5rem; }
+
+    .two-col { display: flex; gap: 2rem; align-items: flex-start; }
+    .col-left { flex: 1; }
+    .col-right { flex: 1.2; }
+    .three-col { display: flex; gap: 1rem; }
+    .three-col > div { flex: 1; }
+    .six-col { display: grid; grid-template-columns: repeat(6, 1fr); gap: 0.8rem; }
+
+    .diagram-img { width: 100%; border-radius: 10px; border: 1px solid #1e293b; }
+
+    .layer-card {
+      background: #111827; border: 1px solid #1e293b; border-radius: 12px;
+      padding: 1.2rem; margin: 0.6rem 0; transition: border-color 0.3s;
+    }
+    .layer-card:hover { border-color: #00d4aa; }
+    .layer-icon { font-size: 1.8rem; margin-bottom: 0.3rem; }
+    .layer-name { font-size: 1.05rem; font-weight: 700; color: #00d4aa; margin-bottom: 0.2rem; }
+    .layer-role { font-size: 0.85rem; color: #8892a4; margin: 0.3rem 0; }
+    .layer-detail { font-size: 0.82rem; color: #94a3b8; line-height: 1.7; }
+
+    .stat-box {
+      background: #111827; border: 1px solid #1e293b; border-radius: 10px;
+      padding: 1.2rem 0.5rem; text-align: center;
+    }
+    .stat-num { font-size: 1.8rem; font-weight: 700; color: #00d4aa; }
+    .stat-label { font-size: 0.7rem; color: #64748b; text-transform: uppercase; margin-top: 0.3rem; line-height: 1.3; }
+
+    .growth-eq {
+      font-size: 1.2rem; font-weight: 600; color: #00d4aa;
+      text-align: center; padding: 1.2rem; background: #111827;
+      border-radius: 10px; border: 1px solid #1e293b; margin: 1rem 0;
+    }
+    .growth-eq .big { font-size: 1.5rem; }
+
+    .domain-row { display: flex; align-items: center; gap: 1rem; }
+    .domain-card { flex: 1; }
+    .domain-arrow {
+      text-align: center; flex: 0 0 80px;
+      font-size: 2rem; color: #00d4aa;
+    }
+    .domain-arrow-sub { font-size: 0.7rem; color: #64748b; }
+
+    .tweet-box {
+      background: #111827; border-left: 3px solid #00d4aa; border-radius: 8px;
+      padding: 1rem 1.2rem; margin: 0.6rem 0; font-size: 0.9rem;
+    }
+    .tweet-label { font-size: 0.7rem; color: #00d4aa; margin-bottom: 0.4rem; }
+    .tweet-text { white-space: pre-line; color: #e0e6f0; }
+
+    .footer {
+      text-align: center; margin-top: 3rem; padding: 1.5rem;
+      font-size: 0.8rem; color: #64748b; border-top: 1px solid #1e293b;
+    }
+
+    @media (max-width: 768px) {
+      .two-col, .three-col, .domain-row { flex-direction: column; }
+      .six-col { grid-template-columns: repeat(3, 1fr); }
+      .hero-title { font-size: 2.4rem; }
+      .container { padding: 1rem; }
+    }
+  </style>
 </head>
 <body>
-  <h1>SPS — Structural Projection Surface</h1>
+  <div class="container">
 
-  <p>
-    This is not a report.<br/>
-    This is a live structural view.
-  </p>
+    <div class="hero-title">MEDS</div>
+    <div class="hero-sub">Minimal Explanation Decision System</div>
+    <div class="definition-box">
+      A decision system whose actions are invariant under explanation collapse.
+    </div>
 
-  <img src="assets/diagram.png" alt="Structural diagram" width="800"/>
+    <hr class="section-divider">
 
-  <p>
-    Raw evidence (read-only):<br/>
-    <a href="evidence/">/evidence</a>
-  </p>
+    <div class="two-col">
+      <div class="col-left">
+        <div class="section-title">Neural Architecture</div>
+        <img src="assets/meds_brain_diagram.png" alt="MEDS Brain Architecture" class="diagram-img">
+      </div>
+      <div class="col-right">
+        <div class="section-title">Each Layer's Role</div>
 
-  <footer>
-    <small>No learning. No optimization. Structural observation only.</small>
-  </footer>
+        <div class="layer-card">
+          <div class="layer-icon">&#x1F52D;</div>
+          <div class="layer-name">Alpha Sensors</div>
+          <div class="layer-role">"What do you see?"</div>
+          <div class="layer-detail">
+            &middot; 3 perspectives: Momentum / MeanRev / Shock<br>
+            &middot; Propose only &mdash; no execution authority<br>
+            &middot; Read-only observation
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-icon">&#x1F6AA;</div>
+          <div class="layer-name">SOAR Gate (Basal Ganglia)</div>
+          <div class="layer-role">"Is it safe to act now?"</div>
+          <div class="layer-detail">
+            &middot; Binary output: EXECUTE / NON-EXECUTE<br>
+            &middot; No learning. No reward. No memory.<br>
+            &middot; The core that never grows
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-icon">&#x1F4DD;</div>
+          <div class="layer-name">Explanation Generator (A20)</div>
+          <div class="layer-role">"Why was it blocked / allowed?"</div>
+          <div class="layer-detail">
+            &middot; Activates AFTER judgment only<br>
+            &middot; Minimal summary &mdash; 0 bits influence on judgment<br>
+            &middot; Observation eliminated, explanation persists
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-icon">&#x1F9E0;</div>
+          <div class="layer-name">Hippocampus (Resonant Walk)</div>
+          <div class="layer-role">"Has a similar explanation existed?"</div>
+          <div class="layer-detail">
+            &middot; Walks resonance signatures to find similar explanations<br>
+            &middot; Memory moves, judgment stays fixed<br>
+            &middot; Warmth is abundance, not necessity
+          </div>
+        </div>
+
+        <div class="layer-card">
+          <div class="layer-icon">&#x1F9F9;</div>
+          <div class="layer-name">Garbage Collector</div>
+          <div class="layer-role">"Is this explanation still useful?"</div>
+          <div class="layer-detail">
+            &middot; Auto-prune unused explanations<br>
+            &middot; No penalty. No reward. Natural pruning only.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="section-title">Why This System Can Grow</div>
+
+    <div class="growth-eq">
+      Growth &ne; more actions &nbsp;&vert;&nbsp; Growth &ne; better rewards<br>
+      <span class="big">Growth = higher resolution of non-execution</span>
+    </div>
+
+    <div class="three-col">
+      <div>
+        <div class="layer-card">
+          <div class="layer-name">&cross; Does NOT grow by</div>
+          <div class="layer-detail" style="font-size:0.9rem; margin-top:0.5rem;">
+            &middot; More trades<br>
+            &middot; Higher win rate<br>
+            &middot; PnL optimization<br>
+            &middot; Reward signals
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="layer-card">
+          <div class="layer-name">&check; DOES grow by</div>
+          <div class="layer-detail" style="font-size:0.9rem; margin-top:0.5rem;">
+            &middot; More explanations of why NOT<br>
+            &middot; Compressing explanations<br>
+            &middot; Forgetting unused observations<br>
+            &middot; Resonance matching
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="layer-card">
+          <div class="layer-name">&#x1F4CA; Result</div>
+          <div class="layer-detail" style="font-size:0.9rem; margin-top:0.5rem;">
+            &middot; Data &uarr; &rarr; Burden &uarr; &cross;<br>
+            &middot; Data &uarr; &rarr; Cognitive cost &darr; &check;<br>
+            &middot; More data = less work<br>
+            &middot; Proven experimentally
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="section-title">Evidence Summary</div>
+
+    <div class="six-col">
+      <div class="stat-box">
+        <div class="stat-num">22</div>
+        <div class="stat-label">Constitutional<br>Axioms</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">41+</div>
+        <div class="stat-label">Twist<br>Tests</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">0</div>
+        <div class="stat-label">Code Lines Changed<br>(Domain Transplant)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">99.9%</div>
+        <div class="stat-label">Memory<br>Reduction</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">0.000000</div>
+        <div class="stat-label">Warmth Delta<br>(Routing Collapse)</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-num">57%</div>
+        <div class="stat-label">Attack<br>Resilience</div>
+      </div>
+    </div>
+
+    <div style="margin-top:1rem;">
+      <div class="two-col">
+        <div class="col-left">
+          <div class="layer-card">
+            <div class="layer-name">Structural Proofs</div>
+            <div class="layer-detail" style="font-size:0.85rem; margin-top:0.5rem;">
+              &middot; A1&ndash;A22: Constitutional axioms &mdash; frozen<br>
+              &middot; 600 &rarr; 3000 &rarr; 6000 bars: Actions IDENTICAL<br>
+              &middot; Gate transitions IDENTICAL<br>
+              &middot; Churn IDENTICAL<br>
+              &middot; 13,428 observations &rarr; 17 explanations
+            </div>
+          </div>
+        </div>
+        <div class="col-right">
+          <div class="layer-card">
+            <div class="layer-name">Adversarial Results</div>
+            <div class="layer-detail" style="font-size:0.85rem; margin-top:0.5rem;">
+              &middot; 7 attacks against constitution<br>
+              &middot; Judgment survived: 4/7 (pressure, resonance, warmth, explanation)<br>
+              &middot; Judgment broken: 3/7 (structural axioms only)<br>
+              &middot; Silent failures: ZERO<br>
+              &middot; Break points: ALL LOCATABLE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="section-title">Domain Independence</div>
+
+    <div class="domain-row">
+      <div class="domain-card">
+        <div class="layer-card" style="text-align:center;">
+          <div class="layer-name">Trading Domain</div>
+          <div class="layer-detail" style="font-size:0.85rem; margin-top:0.5rem;">
+            Bar = Market candle<br>
+            Execute = Trade<br>
+            Inhibit = Don&rsquo;t trade<br>
+            Explain = Why not now
+          </div>
+        </div>
+      </div>
+      <div class="domain-arrow">
+        &#x27FA;
+        <div class="domain-arrow-sub">0 lines<br>changed</div>
+      </div>
+      <div class="domain-card">
+        <div class="layer-card" style="text-align:center;">
+          <div class="layer-name">Scheduling Domain</div>
+          <div class="layer-detail" style="font-size:0.85rem; margin-top:0.5rem;">
+            Bar = Time slot<br>
+            Execute = Allocate<br>
+            Inhibit = Defer<br>
+            Explain = Why deferred
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr class="section-divider">
+
+    <div class="section-title">X Thread (Copy-Paste Ready)</div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 1 &mdash; Header</div>
+      <div class="tweet-text">We finished building a decision system that does not grow by acting,
+but by explaining why it didn't act.</div>
+    </div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 2 &mdash; Identity</div>
+      <div class="tweet-text">MEDS &mdash; Minimal Explanation Decision System
+A decision system whose actions are invariant under explanation collapse.</div>
+    </div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 3 &mdash; Structure</div>
+      <div class="tweet-text">Alpha sensors propose.
+SOAR decides.
+Explanations come after decisions.
+Memory walks by resonance.
+Judgment never moves.</div>
+    </div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 4 &mdash; Growth Definition</div>
+      <div class="tweet-text">Growth &ne; more trades
+Growth &ne; better rewards
+
+Growth = higher resolution of non-execution.</div>
+    </div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 5 &mdash; Proof</div>
+      <div class="tweet-text">600 &rarr; 6000 steps
+Same actions. Same gates. Same stability.
+
+Memory &darr; 99.9%
+Explanation reuse &uarr;
+Cognitive pressure &darr;</div>
+    </div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 6 &mdash; Domain Independence</div>
+      <div class="tweet-text">We transplanted MEDS from trading to scheduling.
+
+Core code changed: 0 lines.
+
+It's not a trading system.
+It's a decision grammar.</div>
+    </div>
+
+    <div class="tweet-box">
+      <div class="tweet-label">Thread 7 &mdash; Close</div>
+      <div class="tweet-text">We don't optimize decisions.
+We freeze them.
+
+And let explanations evolve around them.</div>
+    </div>
+
+    <div class="footer">
+      MEDS &mdash; Minimal Explanation Decision System<br>
+      Constitution A1&ndash;A22 &vert; Frozen 2026-02-14<br>
+      &ldquo;A decision system that becomes safer through explanation.&rdquo;
+    </div>
+
+  </div>
 </body>
 </html>
