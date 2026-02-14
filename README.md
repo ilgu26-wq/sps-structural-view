@@ -5,13 +5,19 @@
 
 ---
 
-## ▶ Interactive Structural View (MAIN)
+## ▶ Main Entry (View Now)
 
-👉 **Open the live surface here**  
+### Option A — Live Page (GitHub Pages)
+> ⏳ If this shows 404, deployment may still be in progress.
+
 🔗 https://ilgu26-wq.github.io/sps-structural-view/
 
-This page renders the current structural projection exported from Replit  
-and published as a static, read-only surface.
+---
+
+### Option B — Direct HTML (always works)
+🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index.html
+
+> Click **“View raw”** to open the exact HTML file.
 
 ---
 
@@ -23,15 +29,6 @@ and published as a static, read-only surface.
 
 The HTML page is the **authoritative view**.  
 This repository only anchors and serves it.
-
----
-
-## Structure
-
-├─ index.html # Live structural surface (GitHub Pages entry)
-├─ README.md # This page (entry point)
-└─ assets/ # Static assets
-
 
 ---
 
