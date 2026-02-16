@@ -135,9 +135,64 @@ No behavior is produced here.
 
 ---
 
+## ⚠️ Important Clarification — This Is NOT the Growing SOAR
+
+This repository does **not** represent the *growing* or *adaptive* SOAR system.
+
+- ❌ No self-improvement
+- ❌ No recursive learning
+- ❌ No evolutionary core updates
+
+The SOAR referenced here is a **sealed, invariant core (SOAR1)**  
+used **only as a structural reference**.
+
+Growth, adaptation, and multi-core evolution  
+(if present elsewhere) belong to **a different SOAR lineage**  
+and are **intentionally excluded** from this surface.
+
+---
+
+### What This SPS Actually Shows
+
+- A **fixed SOAR core**, already decided
+- A **structural projection surface** built *around* it
+- Evidence that:
+  - performance limits did **not** originate from the core
+  - execution layers were the bottleneck
+  - core judgment remained valid without modification
+
+This separation is deliberate.
+
+> Growth happens **outside** this surface.  
+> Truth is observed **inside** it.
+
+---
+
+### Structural Role of This Repository
+
+This repository exists to:
+
+- anchor a **non-growing, non-adaptive SOAR core**
+- expose its behavior through a **static structural surface**
+- prevent confusion between:
+  - **core invariance**, and
+  - **system-level growth elsewhere**
+
+If you are looking for:
+- learning systems
+- adaptive agents
+- recursive intelligence
+
+You are in the **wrong repository**.
+
+This surface is for **structural truth only**.
+
+---
+
 ## Status
 
 - Execution: ❌ none  
 - Learning: ❌ none  
 - Interpretation: ❌ none  
 - Structural display: ✅ enabled
+
