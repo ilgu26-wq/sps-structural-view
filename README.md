@@ -135,20 +135,30 @@ No behavior is produced here.
 
 ---
 
-## ⚠️ Important Clarification — This Is NOT the Growing SOAR
+## ⚠️ Important Clarification — Purpose of This Description
 
-This repository does **not** represent the *growing* or *adaptive* SOAR system.
+This section is included to **clearly distinguish** between:
 
-- ❌ No self-improvement
-- ❌ No recursive learning
-- ❌ No evolutionary core updates
+- a **growing / adaptive SOAR system**, and  
+- a **sealed, invariant SOAR core (SOAR1)**
 
-The SOAR referenced here is a **sealed, invariant core (SOAR1)**  
-used **only as a structural reference**.
+and to explain **why this repository intentionally uses the latter**.
 
-Growth, adaptation, and multi-core evolution  
-(if present elsewhere) belong to **a different SOAR lineage**  
-and are **intentionally excluded** from this surface.
+The SOAR referenced in this SPS is **not growing by design**:
+
+- ❌ No self-improvement  
+- ❌ No recursive learning  
+- ❌ No evolutionary core updates  
+
+This is **not a limitation claim**, but a **structural baseline choice**.
+
+The growing SOAR core — including growth, adaptation,  
+and multi-core evolution — is described and documented  
+**elsewhere (e.g., in the HTML README of the growing system)**.
+
+This SPS exists to provide a **fixed reference surface**  
+against which the properties and necessity of growth  
+can be meaningfully compared.
 
 ---
 
@@ -161,10 +171,10 @@ and are **intentionally excluded** from this surface.
   - execution layers were the bottleneck
   - core judgment remained valid without modification
 
-This separation is deliberate.
+This separation is **intentional and comparative**.
 
-> Growth happens **outside** this surface.  
-> Truth is observed **inside** it.
+> Growth is defined **relative to a fixed reference**.  
+> This surface provides that reference.
 
 ---
 
@@ -174,18 +184,18 @@ This repository exists to:
 
 - anchor a **non-growing, non-adaptive SOAR core**
 - expose its behavior through a **static structural surface**
-- prevent confusion between:
+- enable clear comparison between:
   - **core invariance**, and
-  - **system-level growth elsewhere**
+  - **system-level growth described elsewhere**
 
 If you are looking for:
 - learning systems
 - adaptive agents
 - recursive intelligence
 
-You are in the **wrong repository**.
+Those are **documented in a different SOAR lineage**.
 
-This surface is for **structural truth only**.
+This surface is for **structural comparison and truth anchoring**.
 
 ---
 
