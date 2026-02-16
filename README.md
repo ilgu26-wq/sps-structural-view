@@ -135,67 +135,89 @@ No behavior is produced here.
 
 ---
 
-## ⚠️ Important Clarification — Purpose of This Description
+## ⚠️ Important Explanation — Purpose of This Section
 
-This section is included to **clearly distinguish** between:
+This section is included to **clearly explain the nature of the *growing* SOAR core**  
+maintained in this repository, by **explicitly contrasting it** with a  
+**sealed and invariant SOAR core (SOAR1)** used **only as a reference baseline**.
 
-- a **growing / adaptive SOAR system**, and  
-- a **sealed, invariant SOAR core (SOAR1)**
+In other words, the purpose of this description is to distinguish between:
 
-and to explain **why this repository intentionally uses the latter**.
+- a **growing / adaptive SOAR system** (the primary subject of this repository), and  
+- a **sealed, non-growing SOAR core (SOAR1)** used for structural comparison.
 
-The SOAR referenced in this SPS is **not growing by design**:
+---
+
+### About the Reference Core (SOAR1)
+
+Whenever **SOAR1** is mentioned in this SPS, it refers to a  
+**deliberately sealed baseline core** with the following properties:
 
 - ❌ No self-improvement  
 - ❌ No recursive learning  
 - ❌ No evolutionary core updates  
 
-This is **not a limitation claim**, but a **structural baseline choice**.
-
-The growing SOAR core — including growth, adaptation,  
-and multi-core evolution — is described and documented  
-**elsewhere (e.g., in the HTML README of the growing system)**.
-
-This SPS exists to provide a **fixed reference surface**  
-against which the properties and necessity of growth  
-can be meaningfully compared.
+This is **not a claim that this repository does not support growth**.  
+It is a **structural baseline choice** made to clearly demonstrate  
+**what growth adds and where it occurs**.
 
 ---
 
-### What This SPS Actually Shows
+### The Actual Subject of This Repository: Growing SOAR
 
-- A **fixed SOAR core**, already decided
-- A **structural projection surface** built *around* it
-- Evidence that:
-  - performance limits did **not** originate from the core
-  - execution layers were the bottleneck
-  - core judgment remained valid without modification
+The system developed and documented here is a **growing SOAR architecture**:
 
-This separation is **intentional and comparative**.
+- capable of structural adaptation through observation  
+- supporting multi-core expansion and interaction  
+- separating execution, interpretation, and growth layers  
+
+The sealed SOAR1 baseline exists **only to clarify**:
+
+- what remains invariant,
+- what evolves over time, and
+- where structural growth is introduced.
+
+---
+
+## What This SPS Actually Shows
+
+This SPS (Structural Projection Surface):
+
+- places a **fixed SOAR1 reference core** on the surface,
+- projects the behavior of the **growing SOAR system** around it, and
+- makes the following distinctions observable:
+
+- performance limits did **not** originate from core judgment,
+- execution layers formed the primary bottleneck,
+- growth operates outside the invariant decision core.
+
+These distinctions are **intentional and explanatory**.
 
 > Growth is defined **relative to a fixed reference**.  
 > This surface provides that reference.
 
 ---
 
-### Structural Role of This Repository
+## Structural Role of This Repository
 
 This repository exists to:
 
-- anchor a **non-growing, non-adaptive SOAR core**
-- expose its behavior through a **static structural surface**
-- enable clear comparison between:
+- center the **growing SOAR core** as the main subject,
+- anchor a **sealed reference core (SOAR1)** for comparison, and
+- make explicit the difference between:
   - **core invariance**, and
-  - **system-level growth described elsewhere**
+  - **system-level growth introduced elsewhere in the architecture**.
 
 If you are looking for:
-- learning systems
-- adaptive agents
-- recursive intelligence
 
-Those are **documented in a different SOAR lineage**.
+- conventional machine learning systems,
+- single-agent adaptive models,
+- recursive self-training architectures,
 
-This surface is for **structural comparison and truth anchoring**.
+those belong to **a different conceptual lineage**.
+
+This surface exists for **structural comparison and verification of growth**.
+
 
 ---
 
