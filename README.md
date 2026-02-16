@@ -31,6 +31,109 @@ The HTML page is the **authoritative view**.
 This repository only anchors and serves it.
 
 ---
+## SOAR — EXIT ABLATION STUDY  
+**Structural Evidence of Core Invariance (Prop-Oriented)**
+
+This section documents an **execution-only ablation** conducted to verify  
+whether observed performance limits originated from:
+
+- core judgment (alpha selection), or  
+- execution mechanics (alpha realization)
+
+No learning, no optimization, and no structural modification were introduced.
+
+---
+
+### Verdict
+
+**CASE 1 — EXIT Problem (Not Core)**
+
+> The structural alpha was correct.  
+> The execution layer released it too early.
+
+---
+
+### Experimental Design
+
+- **Core**: SOAR1 (fixed, sealed)
+- **Entry logic**: identical across all tests
+- **Market data**: identical
+- **Variable**: EXIT logic only
+
+This isolates execution effects while holding  
+the judgment surface strictly invariant.
+
+---
+
+### Results Summary
+
+| EXIT Pattern | Win Rate | RR | Expectancy | Equity | Max DD |
+|-------------|----------|----|------------|--------|--------|
+| A (Baseline) | 82.2% | 0.99 | +1.21 | +606R | -8R |
+| B (Extended τ) | **89.0%** | **2.24** | **+3.66** | **+1832R** | **-5R** |
+| C (Aggressive) | 93.2% | 2.40 | +4.31 | +2155R | -4R |
+
+---
+
+### Structural Observations
+
+#### 1. Core Judgment Remains Valid
+- Win rate consistently exceeds **80%**
+- Entry quality does not degrade
+- Structural opportunity identification is stable
+
+#### 2. Performance Was EXIT-Constrained
+- EXIT-A truncated structure prematurely
+- EXIT-B respected structural persistence (τ)
+- Expectancy tripled **without touching the core**
+
+#### 3. Longer τ Improved Both RR and Win Rate
+
+| Pattern | Avg Structural Hold (τ) |
+|-------|--------------------------|
+| A | 6.3 bars |
+| B | 8.6 bars |
+| C | 9.9 bars |
+
+Premature exits discarded valid alpha mass  
+while structure remained intact.
+
+#### 4. Drawdown Improvement Confirms Alignment
+- Max DD reduced from **-8R → -5R**
+- Fewer re-entries and structural violations
+- EXIT-B aligns with persistence, not prediction
+
+#### 5. Aggressive EXIT (C) Is Non-Prop-Stable
+- Highest expectancy
+- Structural validity collapses (37.5%)
+- Suitable for research, not evaluation regimes
+
+---
+
+### Conclusion
+
+> **The core did not improve.  
+> The execution finally stopped interfering.**
+
+This ablation confirms:
+
+- Performance limits were **execution-induced**
+- SOAR1 judgment was already correct
+- EXIT is the primary leverage surface
+
+---
+
+### Action (Structural Implication)
+
+- Keep SOAR1 **sealed**
+- Modify execution surface only
+- Treat EXIT as a realization operator, not a decision
+
+This repository records the surface.  
+The HTML view displays it.  
+No behavior is produced here.
+
+---
 
 ## Status
 
