@@ -775,9 +775,16 @@ document.body.appendChild(s)}
         <div style="text-align:center;padding:6px;border:1px solid #b464ff33;border-radius:4px;color:#b464ff;background:#b464ff08">[ Resonance Detector ]<br><span style="font-size:8px;color:#8866aa">multi-scale rhythm, alignment</span></div>
         <div style="text-align:center;color:#44668844">|</div>
         <div style="text-align:center;padding:8px;border:2px solid #00ccaa44;border-radius:4px;color:#00ccaa;background:#00ccaa08;font-weight:700">[ Radio State Converter ]<br><span style="font-size:8px;color:#448877;font-weight:400">frequency → state transformation</span></div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:8px;border:2px solid #ff880044;border-radius:4px;color:#ff8800;background:#ff880008;font-weight:700">[ Shadow Projector ]<br><span style="font-size:8px;color:#886644;font-weight:400">entry-time exit shape reading</span></div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:8px;border:2px solid #ff336644;border-radius:4px;color:#ff3366;background:#ff336608;font-weight:700">[ Pain Field ]<br><span style="font-size:8px;color:#884466;font-weight:400">global pain state broadcaster</span></div>
       </div>
       <div style="text-align:center;margin-top:8px;font-size:8px;color:#664488;padding:4px;border:1px solid #b464ff15;border-radius:3px;background:#b464ff04">
         Sees frequency. Outputs state. Never decides.
+      </div>
+      <div style="text-align:center;margin-top:4px;font-size:7px;color:#886644;padding:3px;border:1px solid #ff880015;border-radius:3px;background:#ff880004">
+        Shadow reads shape, not value. Pain says "it hurts", never "what to do".
       </div>
     </div>
 
@@ -791,6 +798,20 @@ document.body.appendChild(s)}
         border:1px solid #ff303022;background:#ff303006;color:#ff6666">
         RAW FREQUENCY BANNED
       </div>
+      <div style="margin-top:4px;font-size:8px;color:#ff8800;text-align:center;line-height:1.4">
+        SHADOW<br>STATE
+      </div>
+      <div style="width:60px;height:2px;background:linear-gradient(90deg,#ff8800,#00ccaa);border-radius:1px;margin:4px auto"></div>
+      <div style="font-size:7px;color:#886644;text-align:center;line-height:1.3">
+        collapse_lk<br>stability_shape<br>exit_type_sig<br>persistence_decay
+      </div>
+      <div style="margin-top:6px;font-size:8px;color:#ff3366;text-align:center;line-height:1.4">
+        PAIN<br>STATE
+      </div>
+      <div style="width:60px;height:2px;background:linear-gradient(90deg,#ff3366,#ff6644);border-radius:1px;margin:4px auto"></div>
+      <div style="font-size:7px;color:#884466;text-align:center;line-height:1.3">
+        pain_level<br>pain_trend<br>pain_zone
+      </div>
     </div>
 
     <div style="flex:1;min-width:260px;max-width:340px">
@@ -798,12 +819,14 @@ document.body.appendChild(s)}
       <div style="font-family:monospace;font-size:10px;line-height:2.2;color:#668">
         <div style="text-align:center;padding:8px;border:2px solid #ff303044;border-radius:4px;color:#ff6666;background:#ff303008;font-weight:700">[ SOAR1 Judgment ]<br><span style="font-size:8px;color:#ff888888;font-weight:400">5 dims: gp + surv + sc + lock + coh</span></div>
         <div style="text-align:center;color:#44668844">|</div>
-        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ ADMIT / DENY ]</div>
+        <div style="text-align:center;padding:8px;border:2px solid #00bbff44;border-radius:4px;color:#00bbff;background:#00bbff08;font-weight:700">[ Consensus Gate ]<br><span style="font-size:8px;color:#446688;font-weight:400">4 voters: structure + radio + shadow + pain</span></div>
         <div style="text-align:center;color:#44668844">|</div>
-        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ Execution / Pain / Energy ]</div>
+        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ HOLD / REFLEX EXIT ]</div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ Execution / Energy ]</div>
       </div>
       <div style="text-align:center;margin-top:8px;font-size:8px;color:#884444;padding:4px;border:1px solid #ff303015;border-radius:3px;background:#ff303004">
-        Asks "channel locked?" — never "what frequency?"
+        Asks "do all voters agree?" — exit is reflex, not decision
       </div>
     </div>
   </div>
@@ -892,6 +915,300 @@ document.body.appendChild(s)}
     tau_persistence dominates all phases — strongest entry discriminator, earliest hold warning, most powerful collapse detector<br>
     direction_autocorr = #1 entry feature but NOT present in exit (tick-only feature, entry-specific)<br>
     Observation only. Zero decisions changed. This is the map, not the rules.
+  </div>
+</div>
+
+<!-- EXP-SHADOW-PROJECTION-v1 RESULTS -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(255,136,0,0.03);border:1px solid rgba(255,136,0,0.2)">
+  <div style="text-align:center;font-size:13px;color:#ff8800;letter-spacing:3px;margin-bottom:4px">
+    EXP-SHADOW-PROJECTION-v1 — Entry-Time Shadow → Exit Correspondence
+  </div>
+  <div style="text-align:center;font-size:9px;color:#886644;margin-bottom:16px">
+    238 trades analyzed | Shadow reads shape at entry | Zero decision authority
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px">
+    <div style="flex:1;min-width:140px;max-width:180px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(255,136,0,0.2);background:rgba(255,136,0,0.04)">
+      <div style="font-size:9px;color:#886644">Shape Match Rate</div>
+      <div style="font-size:22px;font-weight:700;color:#ff8800;margin:4px 0">58%</div>
+      <div style="font-size:8px;color:#886644">138/238 trades</div>
+    </div>
+    <div style="flex:1;min-width:140px;max-width:180px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04)">
+      <div style="font-size:9px;color:#448877">STABLE shape</div>
+      <div style="font-size:22px;font-weight:700;color:#00ff88;margin:4px 0">100%</div>
+      <div style="font-size:8px;color:#448877">win rate, +0.15R mean</div>
+    </div>
+    <div style="flex:1;min-width:140px;max-width:180px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(0,170,255,0.2);background:rgba(0,170,255,0.04)">
+      <div style="font-size:9px;color:#446688">DRIFT shape</div>
+      <div style="font-size:22px;font-weight:700;color:#00aaff;margin:4px 0">74%</div>
+      <div style="font-size:8px;color:#446688">win rate, +0.07R mean</div>
+    </div>
+    <div style="flex:1;min-width:140px;max-width:180px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(255,60,60,0.2);background:rgba(255,60,60,0.04)">
+      <div style="font-size:9px;color:#884444">EXHAUST shape</div>
+      <div style="font-size:22px;font-weight:700;color:#ff4444;margin:4px 0">40%</div>
+      <div style="font-size:8px;color:#884444">win rate, -0.06R mean</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:12px;font-size:9px;color:#886644;line-height:1.6">
+    Shadow discriminates PnL within same exit group: STABLE > DRIFT > EXHAUST<br>
+    Entry-time shape reading separates "good drift" from "bad drift"<br>
+    Shadow is morphological state reading, NOT prediction. Zero PnL in computation.
+  </div>
+
+  <div style="text-align:center;margin-top:12px;padding:8px;border-radius:6px;
+    background:rgba(255,136,0,0.06);border:1px solid rgba(255,136,0,0.15)">
+    <div style="font-size:10px;color:#ff8800;font-weight:600;letter-spacing:1px">
+      Shadow = "what ending does this state already contain?"
+    </div>
+    <div style="font-size:8px;color:#886644;margin-top:4px">
+      Not prediction. Not simulation. Morphological reading of current state.
+    </div>
+  </div>
+</div>
+
+<!-- PAIN FIELD + CONSENSUS GATE + REFLEX EXIT -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(255,0,80,0.03);border:2px solid rgba(255,0,80,0.15)">
+  <div style="text-align:center;font-size:13px;color:#ff3366;letter-spacing:3px;margin-bottom:4px">
+    PAIN FIELD + CONSENSUS GATE + REFLEX EXIT
+  </div>
+  <div style="text-align:center;font-size:9px;color:#884466;margin-bottom:20px">
+    Exit is NOT a decision. Exit is a reflex when consensus breaks.
+  </div>
+
+  <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;align-items:flex-start">
+
+    <div style="flex:1;min-width:220px;max-width:300px;padding:16px;border-radius:8px;
+      border:1px solid rgba(255,0,80,0.2);background:rgba(255,0,80,0.04)">
+      <div style="font-size:10px;color:#ff3366;font-weight:700;letter-spacing:2px;margin-bottom:10px;text-align:center">PAIN FIELD (Global Broadcast)</div>
+      <div style="font-size:9px;color:#aa4466;line-height:2.0">
+        resonance_strain<br>
+        shadow_decay_rate<br>
+        structural_stress<br>
+        instability_pressure<br>
+        <span style="font-weight:700;color:#ff3366">pain_level + pain_trend</span>
+      </div>
+      <div style="margin-top:8px;font-size:8px;color:#884466;padding:4px;border:1px solid #ff336615;border-radius:3px;background:#ff336604">
+        Pain says "it hurts" — never "who caused it" or "what to do"
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:220px;max-width:300px;padding:16px;border-radius:8px;
+      border:1px solid rgba(0,200,255,0.2);background:rgba(0,200,255,0.04)">
+      <div style="font-size:10px;color:#00bbff;font-weight:700;letter-spacing:2px;margin-bottom:10px;text-align:center">CONSENSUS GATE (4 Voters)</div>
+      <div style="font-family:monospace;font-size:9px;color:#4488aa;line-height:2.0">
+        <div style="padding:3px 6px;border-radius:3px;background:#00ff8808;border:1px solid #00ff8822;margin:2px 0">Structure alive? <span style="float:right;color:#00ff88">VOTE</span></div>
+        <div style="padding:3px 6px;border-radius:3px;background:#00ccaa08;border:1px solid #00ccaa22;margin:2px 0">Radio locked? <span style="float:right;color:#00ccaa">VOTE</span></div>
+        <div style="padding:3px 6px;border-radius:3px;background:#ff880008;border:1px solid #ff880022;margin:2px 0">Shadow stable? <span style="float:right;color:#ff8800">VOTE</span></div>
+        <div style="padding:3px 6px;border-radius:3px;background:#ff336608;border:1px solid #ff336622;margin:2px 0">Pain tolerable? <span style="float:right;color:#ff3366">VOTE</span></div>
+      </div>
+      <div style="margin-top:8px;font-size:8px;color:#446688;padding:4px;border:1px solid #00bbff15;border-radius:3px;background:#00bbff04">
+        SOAR asks ONE question: "Do all voters agree?"
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:220px;max-width:300px;padding:16px;border-radius:8px;
+      border:1px solid rgba(255,60,60,0.3);background:rgba(255,60,60,0.04)">
+      <div style="font-size:10px;color:#ff4444;font-weight:700;letter-spacing:2px;margin-bottom:10px;text-align:center">REFLEX EXIT</div>
+      <div style="font-family:monospace;font-size:9px;color:#aa4444;line-height:2.2">
+        <div style="text-align:center;padding:4px;border:1px solid #00ff8833;border-radius:3px;color:#00ff88;background:#00ff8808">FULL — all agree</div>
+        <div style="text-align:center;color:#44668844;font-size:7px">|</div>
+        <div style="text-align:center;padding:4px;border:1px solid #ffaa0033;border-radius:3px;color:#ffaa00;background:#ffaa0008">PARTIAL — 1 dissent</div>
+        <div style="text-align:center;color:#44668844;font-size:7px">|</div>
+        <div style="text-align:center;padding:4px;border:1px solid #ff444433;border-radius:3px;color:#ff4444;background:#ff444408">BREAKING — 2 dissents</div>
+        <div style="text-align:center;color:#44668844;font-size:7px">|</div>
+        <div style="text-align:center;padding:6px;border:2px solid #ff303066;border-radius:4px;color:#ff3030;background:#ff303010;font-weight:700">BROKEN — REFLEX FIRES</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:center;gap:10px;margin-top:20px;flex-wrap:wrap">
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;border:1px solid #ff336622;background:#ff336606;color:#ff3366">
+      Pain = global state signal (broadcast)
+    </div>
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;border:1px solid #00bbff22;background:#00bbff06;color:#00bbff">
+      Rewards = local only (per module)
+    </div>
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;border:1px solid #ff303022;background:#ff303006;color:#ff8888">
+      Exit = reflex, not decision
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:14px;padding:10px;border-radius:6px;
+    background:rgba(255,0,80,0.06);border:1px solid rgba(255,0,80,0.15)">
+    <div style="font-size:10px;color:#ff3366;font-weight:600;letter-spacing:1px">
+      "System staying alive" gets rewarded — not "module that was right"
+    </div>
+    <div style="font-size:8px;color:#884466;margin-top:4px">
+      Pain reduces = system comfortable. Consensus holds = position maintained. Break = reflex.
+    </div>
+  </div>
+</div>
+
+<!-- EXP-PAIN-CALIBRATION-v1 + EXP-SURVIVAL-TO-PROFIT-v1 -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(255,200,0,0.03);border:1px solid rgba(255,200,0,0.2)">
+  <div style="text-align:center;font-size:13px;color:#ffcc00;letter-spacing:3px;margin-bottom:4px">
+    EXP-PAIN-CALIBRATION-v1 — PnL as Scorecard
+  </div>
+  <div style="text-align:center;font-size:9px;color:#aa8833;margin-bottom:16px">
+    150 grid combos | Walk-forward: 2 days calibrate, 2 days validate | PnL NEVER enters real-time
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:16px">
+    <div style="flex:1;min-width:130px;max-width:160px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04)">
+      <div style="font-size:8px;color:#448877">Best Threshold</div>
+      <div style="font-size:20px;font-weight:700;color:#00ff88;margin:4px 0">0.55</div>
+      <div style="font-size:7px;color:#448877">pain tolerable limit</div>
+    </div>
+    <div style="flex:1;min-width:130px;max-width:160px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(0,200,255,0.2);background:rgba(0,200,255,0.04)">
+      <div style="font-size:8px;color:#446688">Best Slope</div>
+      <div style="font-size:20px;font-weight:700;color:#00bbff;margin:4px 0">0.8</div>
+      <div style="font-size:7px;color:#446688">pain rise speed</div>
+    </div>
+    <div style="flex:1;min-width:130px;max-width:160px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(180,100,255,0.2);background:rgba(180,100,255,0.04)">
+      <div style="font-size:8px;color:#8866aa">Best Decay</div>
+      <div style="font-size:20px;font-weight:700;color:#b464ff;margin:4px 0">5</div>
+      <div style="font-size:7px;color:#8866aa">lookback window</div>
+    </div>
+    <div style="flex:1;min-width:130px;max-width:160px;padding:12px;border-radius:8px;text-align:center;
+      border:1px solid rgba(255,200,0,0.2);background:rgba(255,200,0,0.04)">
+      <div style="font-size:8px;color:#aa8833">Calibration</div>
+      <div style="font-size:20px;font-weight:700;color:#ffcc00;margin:4px 0">4/4</div>
+      <div style="font-size:7px;color:#aa8833">PASS (composite 0.87)</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:12px">
+    <div style="padding:8px 14px;border-radius:6px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      TailMiss: 0% PASS
+    </div>
+    <div style="padding:8px 14px;border-radius:6px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      LeadTime: 2.0 bars PASS
+    </div>
+    <div style="padding:8px 14px;border-radius:6px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      OverReflex: 0% PASS
+    </div>
+    <div style="padding:8px 14px;border-radius:6px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      PnLDelta: +0.07R PASS
+    </div>
+  </div>
+
+  <div style="text-align:center;font-size:9px;color:#aa8833;line-height:1.6">
+    Validation (unseen data): 3/4 PASS — TailMiss needs more data (100% on 15 trades = small sample)<br>
+    Improvement over default: +0.0835 composite. PnL = "how much should it have hurt?" not "what to do"
+  </div>
+</div>
+
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(0,255,136,0.03);border:2px solid rgba(0,255,136,0.2)">
+  <div style="text-align:center;font-size:13px;color:#00ff88;letter-spacing:3px;margin-bottom:4px">
+    EXP-SURVIVAL-TO-PROFIT-v1 — Survival + Money
+  </div>
+  <div style="text-align:center;font-size:9px;color:#448877;margin-bottom:16px">
+    24 trades | 4 days | 3 groups: BASE vs CONSENSUS-ONLY vs CONSENSUS+PAIN
+  </div>
+
+  <div style="overflow-x:auto;margin-bottom:16px">
+    <table style="width:100%;max-width:600px;margin:0 auto;font-family:monospace;font-size:9px;color:#668;border-collapse:collapse">
+      <tr style="border-bottom:1px solid #33445533">
+        <td style="padding:6px 8px;color:#668;font-weight:700">Metric</td>
+        <td style="padding:6px 8px;text-align:right;color:#888">BASE</td>
+        <td style="padding:6px 8px;text-align:right;color:#00bbff">CONSENSUS</td>
+        <td style="padding:6px 8px;text-align:right;color:#00ff88;font-weight:700">FULL</td>
+      </tr>
+      <tr style="border-bottom:1px solid #33445511">
+        <td style="padding:4px 8px;color:#ff6666">MaxDD</td>
+        <td style="padding:4px 8px;text-align:right;color:#888">0.609R</td>
+        <td style="padding:4px 8px;text-align:right;color:#00bbff">0.397R</td>
+        <td style="padding:4px 8px;text-align:right;color:#00ff88;font-weight:700">0.113R</td>
+      </tr>
+      <tr style="border-bottom:1px solid #33445511">
+        <td style="padding:4px 8px;color:#ff6666">WorstTrade</td>
+        <td style="padding:4px 8px;text-align:right;color:#888">-0.42R</td>
+        <td style="padding:4px 8px;text-align:right;color:#00bbff">-0.27R</td>
+        <td style="padding:4px 8px;text-align:right;color:#00ff88;font-weight:700">-0.11R</td>
+      </tr>
+      <tr style="border-bottom:1px solid #33445511">
+        <td style="padding:4px 8px;color:#00ff88">TotalR</td>
+        <td style="padding:4px 8px;text-align:right;color:#888">+0.27R</td>
+        <td style="padding:4px 8px;text-align:right;color:#00bbff;font-weight:700">+0.65R</td>
+        <td style="padding:4px 8px;text-align:right;color:#00ff88">+0.47R</td>
+      </tr>
+      <tr style="border-bottom:1px solid #33445511">
+        <td style="padding:4px 8px;color:#00ff88">WinRate</td>
+        <td style="padding:4px 8px;text-align:right;color:#888">62.5%</td>
+        <td style="padding:4px 8px;text-align:right;color:#00bbff;font-weight:700">70.8%</td>
+        <td style="padding:4px 8px;text-align:right;color:#00ff88">66.7%</td>
+      </tr>
+      <tr style="border-bottom:1px solid #33445511">
+        <td style="padding:4px 8px;color:#ffcc00">Profit/MaxDD</td>
+        <td style="padding:4px 8px;text-align:right;color:#888">0.44</td>
+        <td style="padding:4px 8px;text-align:right;color:#00bbff">1.63</td>
+        <td style="padding:4px 8px;text-align:right;color:#00ff88;font-weight:700">4.20</td>
+      </tr>
+      <tr>
+        <td style="padding:4px 8px;color:#b464ff">Consistency</td>
+        <td style="padding:4px 8px;text-align:right;color:#888">0.197</td>
+        <td style="padding:4px 8px;text-align:right;color:#00bbff;font-weight:700">0.086</td>
+        <td style="padding:4px 8px;text-align:right;color:#00ff88">0.187</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:12px">
+    <div style="padding:8px 16px;border-radius:6px;font-size:10px;font-weight:700;
+      border:1px solid rgba(0,255,136,0.3);background:rgba(0,255,136,0.06);color:#00ff88">
+      CONSENSUS+PAIN: ALL PASS (Survival + Profit + Density)
+    </div>
+    <div style="padding:8px 16px;border-radius:6px;font-size:10px;font-weight:700;
+      border:1px solid rgba(0,200,255,0.3);background:rgba(0,200,255,0.06);color:#00bbff">
+      CONSENSUS-ONLY: ALL PASS
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:12px">
+    <div style="flex:1;min-width:160px;max-width:200px;padding:10px;border-radius:8px;text-align:center;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04)">
+      <div style="font-size:8px;color:#448877">DD Improvement</div>
+      <div style="font-size:18px;font-weight:700;color:#00ff88;margin:4px 0">+0.50R</div>
+      <div style="font-size:7px;color:#448877">FULL vs BASE drawdown</div>
+    </div>
+    <div style="flex:1;min-width:160px;max-width:200px;padding:10px;border-radius:8px;text-align:center;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04)">
+      <div style="font-size:8px;color:#448877">R Improvement</div>
+      <div style="font-size:18px;font-weight:700;color:#00ff88;margin:4px 0">+0.21R</div>
+      <div style="font-size:7px;color:#448877">FULL vs BASE total profit</div>
+    </div>
+    <div style="flex:1;min-width:160px;max-width:200px;padding:10px;border-radius:8px;text-align:center;
+      border:1px solid rgba(255,200,0,0.2);background:rgba(255,200,0,0.04)">
+      <div style="font-size:8px;color:#aa8833">Profit/DD Ratio</div>
+      <div style="font-size:18px;font-weight:700;color:#ffcc00;margin:4px 0">4.20</div>
+      <div style="font-size:7px;color:#aa8833">prop firm viability</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:12px;padding:10px;border-radius:6px;
+    background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.15)">
+    <div style="font-size:10px;color:#00ff88;font-weight:600;letter-spacing:1px">
+      Not just survival. Survival + Money. Prop firm passable.
+    </div>
+    <div style="font-size:8px;color:#448877;margin-top:4px">
+      FULL system: MaxDD cut 81% (0.61→0.11R), TotalR up 79% (+0.21R), Profit/DD = 4.2x
+    </div>
   </div>
 </div>
 
@@ -1121,8 +1438,512 @@ document.body.appendChild(s)}
   </div>
 </div>
 
+<div style="margin:30px 0;padding:24px;border-radius:12px;background:rgba(255,100,0,0.04);border:1px solid rgba(255,100,0,0.15)">
+  <div style="font-size:13px;color:#ff6400;letter-spacing:2px;margin-bottom:12px;font-weight:700">
+    EXP-PAIN-BLAME-TRACE-v1 — Pain Blame Trace
+  </div>
+  <div style="font-size:11px;color:#8ab;line-height:1.8;margin-bottom:16px">
+    <div style="margin-bottom:8px"><span style="color:#ff8844;font-weight:600">Research Question:</span> "When the system is in pain, WHO caused it — and was it justified?"</div>
+    <div style="font-size:10px;color:#ff6688">Constraint: Pure observation. PainField FROZEN. ConsensusGate FROZEN. Reflex FROZEN. Nothing adjusted.</div>
+  </div>
+
+  <div style="margin:16px 0;padding:16px;border-radius:8px;background:rgba(255,100,0,0.06);border-left:3px solid #ff6400">
+    <div style="font-size:11px;color:#ffaa66;font-weight:700;margin-bottom:10px">Blame Distribution (587 total pain surges)</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:12px">
+      <div style="padding:10px;border-radius:6px;background:rgba(100,200,100,0.15);border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:9px;color:#8ab">JUSTIFIED</div>
+        <div style="font-size:14px;font-weight:700;color:#00ff88">6</div>
+        <div style="font-size:9px;color:#8ab">1.0%</div>
+      </div>
+      <div style="padding:10px;border-radius:6px;background:rgba(100,200,100,0.15);border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:9px;color:#8ab">EARLY_WARNING</div>
+        <div style="font-size:14px;font-weight:700;color:#00ff88">341</div>
+        <div style="font-size:9px;color:#8ab">58.1%</div>
+      </div>
+      <div style="padding:10px;border-radius:6px;background:rgba(255,100,100,0.15);border:1px solid rgba(255,100,100,0.2)">
+        <div style="font-size:9px;color:#8ab">UNJUSTIFIED</div>
+        <div style="font-size:14px;font-weight:700;color:#ff4444">10</div>
+        <div style="font-size:9px;color:#ff8888">1.7%</div>
+        <div style="font-size:8px;color:#ff8888;margin-top:2px">억울한 고통</div>
+      </div>
+      <div style="padding:10px;border-radius:6px;background:rgba(255,200,100,0.15);border:1px solid rgba(255,150,100,0.2)">
+        <div style="font-size:9px;color:#8ab">EXOGENOUS</div>
+        <div style="font-size:14px;font-weight:700;color:#ffaa66">230</div>
+        <div style="font-size:9px;color:#8ab">39.2%</div>
+      </div>
+    </div>
+    <div style="padding:8px 12px;border-radius:6px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.15);font-size:10px;color:#66ffaa">
+      <span style="font-weight:700">Honest Pain (Justified + Early Warning): 59.1%</span>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;padding:16px;border-radius:8px;background:rgba(100,180,255,0.06);border-left:3px solid #00aaff">
+    <div style="font-size:11px;color:#00d4ff;font-weight:700;margin-bottom:12px">First Movers (who pushes pain up most often)</div>
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:200px;font-size:10px;color:#8ab">RADIO ← dominant first mover</div>
+        <div style="flex:1;height:20px;background:rgba(50,50,50,0.5);border-radius:4px;overflow:hidden;position:relative">
+          <div style="width:79.7%;height:100%;background:linear-gradient(90deg,#ff6400,#ffaa66);border-radius:4px"></div>
+        </div>
+        <div style="width:80px;text-align:right;font-size:10px;color:#ffaa66;font-weight:700">468 (79.7%)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:200px;font-size:10px;color:#8ab">SHADOW</div>
+        <div style="flex:1;height:20px;background:rgba(50,50,50,0.5);border-radius:4px;overflow:hidden;position:relative">
+          <div style="width:13.5%;height:100%;background:linear-gradient(90deg,#ff8844,#ffaa66);border-radius:4px"></div>
+        </div>
+        <div style="width:80px;text-align:right;font-size:10px;color:#ffaa66;font-weight:700">79 (13.5%)</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:10px">
+        <div style="width:200px;font-size:10px;color:#8ab">STRUCTURE</div>
+        <div style="flex:1;height:20px;background:rgba(50,50,50,0.5);border-radius:4px;overflow:hidden;position:relative">
+          <div style="width:6.8%;height:100%;background:linear-gradient(90deg,#ffaa66,#ffbb88);border-radius:4px"></div>
+        </div>
+        <div style="width:80px;text-align:right;font-size:10px;color:#ffaa66;font-weight:700">40 (6.8%)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;overflow-x:auto">
+    <div style="font-size:10px;color:#ffaa66;font-weight:700;margin-bottom:8px">Blame x Source Cross-Reference</div>
+    <table style="width:100%;border-collapse:collapse;font-size:9px;color:#8ab;min-width:600px">
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.2)">
+        <td style="padding:8px;text-align:left;color:#ffaa66;font-weight:700">Source</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66;font-weight:700">JUSTIFIED</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66;font-weight:700">EARLY_WARNING</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66;font-weight:700">UNJUSTIFIED</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66;font-weight:700">EXOGENOUS</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66;font-weight:700">% Unjust</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px;color:#ffaa66;font-weight:600">RADIO</td>
+        <td style="padding:8px;text-align:center">2</td>
+        <td style="padding:8px;text-align:center">278</td>
+        <td style="padding:8px;text-align:center;color:#ff6666">6</td>
+        <td style="padding:8px;text-align:center">182</td>
+        <td style="padding:8px;text-align:center;color:#ff8888">1.3%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px;color:#ffaa66;font-weight:600">SHADOW</td>
+        <td style="padding:8px;text-align:center">4</td>
+        <td style="padding:8px;text-align:center">37</td>
+        <td style="padding:8px;text-align:center;color:#ff6666">3</td>
+        <td style="padding:8px;text-align:center">35</td>
+        <td style="padding:8px;text-align:center;color:#ff8888">3.8%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px;color:#ffaa66;font-weight:600">STRUCTURE</td>
+        <td style="padding:8px;text-align:center">0</td>
+        <td style="padding:8px;text-align:center">26</td>
+        <td style="padding:8px;text-align:center;color:#ff6666">1</td>
+        <td style="padding:8px;text-align:center">13</td>
+        <td style="padding:8px;text-align:center;color:#ff8888">2.5%</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin:16px 0;padding:16px;border-radius:8px;background:rgba(255,80,80,0.06);border-left:3px solid #ff4444">
+    <div style="font-size:11px;color:#ff6666;font-weight:700;margin-bottom:10px">Unjustified Pain Analysis (억울한 고통)</div>
+    <div style="font-size:10px;color:#8ab;line-height:1.6">
+      <div style="margin-bottom:8px"><span style="color:#ff8844;font-weight:600">Primary culprit:</span> RADIO (60% of unjustified pain)</div>
+      <div style="margin-left:12px;margin-bottom:6px">
+        <div style="color:#ff8888">• RADIO: 6 unjustified surges</div>
+        <div style="color:#ff8888">• SHADOW: 3 unjustified surges</div>
+        <div style="color:#ff8888">• STRUCTURE: 1 unjustified surge</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:12px;border-radius:8px;background:rgba(255,80,80,0.08);border:1px solid rgba(255,80,80,0.2)">
+      <div style="font-size:10px;color:#ff6666;font-weight:700;margin-bottom:8px">P1: Honest ≥ 80%</div>
+      <div style="font-size:13px;font-weight:700;color:#ff4444">FAIL</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px">59.1%</div>
+      <div style="font-size:8px;color:#ff8888;margin-top:4px">but only 1.7% unjustified</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.08);border:2px solid rgba(0,255,136,0.25)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:8px">P2: Unjustified ≤ 15%</div>
+      <div style="font-size:13px;font-weight:700;color:#00ff88">PASS ✓</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px">1.7%</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:8px">P3: Exogenous visible</div>
+      <div style="font-size:13px;font-weight:700;color:#00ff88">PASS ✓</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px">39.2%</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:14px;border-radius:8px;background:rgba(255,150,0,0.1);border:1px solid rgba(255,150,0,0.2)">
+    <div style="font-size:12px;color:#ffaa66;font-weight:700;letter-spacing:1px">2/3 PASS — PAIN IS HONEST</div>
+    <div style="font-size:9px;color:#8ab;margin-top:6px">System is not self-torturing, but it IS noise-sensitive</div>
+  </div>
+
+  <div style="margin-top:12px;padding:12px;border-radius:8px;background:rgba(0,100,200,0.08);border-left:3px solid #00aaff">
+    <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:6px">Key Insight</div>
+    <div style="font-size:9px;color:#88ccff;font-style:italic;line-height:1.6">
+      The system isn't torturing itself — only 1.7% of pain is unjustified. But RADIO is the first mover 80% of the time, and 39% of all pain comes from external noise. The next evolution: a 'skin' (noise filter) in front of RADIO.
+    </div>
+  </div>
+</div>
+
+<div style="margin:30px 0;padding:24px;border-radius:12px;background:rgba(255,100,0,0.04);border:1px solid rgba(255,100,0,0.15)">
+  <div style="font-size:13px;color:#ff6400;letter-spacing:2px;margin-bottom:12px;font-weight:700">
+    EXP-AUTONOMIC-PAIN-ADAPT-v1 — Biological Self-Regulation
+  </div>
+  <div style="font-size:11px;color:#8ab;line-height:1.8;margin-bottom:16px">
+    <div style="margin-bottom:8px"><span style="color:#ff8844;font-weight:600">Research Question:</span> "When it hurts, does the system contract? When it stops hurting, does it expand?"</div>
+  </div>
+
+  <div style="margin:16px 0;padding:16px;border-radius:8px;background:rgba(255,100,0,0.06);border-left:3px solid #ff6400">
+    <div style="font-size:11px;color:#ffaa66;font-weight:700;margin-bottom:10px">Architecture (PainAdapter)</div>
+    <div style="font-size:10px;color:#8ab;line-height:1.6">
+      <div>• Each module gets its own PainAdapter — no central optimizer</div>
+      <div>• Each reads ONLY global pain_level (0.0 to 1.0) — no cross-module commands</div>
+      <div>• Each adjusts ONE local parameter autonomously</div>
+      <div style="margin-top:8px;color:#ff8844">Three modules:</div>
+      <div style="margin-left:12px">
+        <div>→ Entry: resonance_threshold (pain ↑ → stricter entry)</div>
+        <div>→ Shadow: collapse_boost (pain ↑ → sees collapse sooner)</div>
+        <div>→ Reflex: pain_tolerance (pain ↑ → exits faster)</div>
+      </div>
+      <div style="margin-top:8px;color:#ff8844">Three profiles:</div>
+      <div style="margin-left:12px">
+        <div>→ CONSERVATIVE (contracts early, recovers slow)</div>
+        <div>→ NEUTRAL (balanced behavior)</div>
+        <div>→ AGGRESSIVE (tolerates more, recovers fast)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;overflow-x:auto">
+    <div style="font-size:10px;color:#ffaa66;font-weight:700;margin-bottom:8px">Cross-Profile Results</div>
+    <table style="width:100%;border-collapse:collapse;font-size:9px;color:#8ab">
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.2)">
+        <td style="padding:8px;text-align:left;color:#ffaa66;font-weight:700">Metric</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">CONSERVATIVE</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">NEUTRAL</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">AGGRESSIVE</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">Trades</td>
+        <td style="padding:8px;text-align:center">6</td>
+        <td style="padding:8px;text-align:center">7</td>
+        <td style="padding:8px;text-align:center">8</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">TotalR</td>
+        <td style="padding:8px;text-align:center;color:#ff4444">-0.0090</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">+0.0203</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">+0.1430</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">MaxDD</td>
+        <td style="padding:8px;text-align:center">0.0714</td>
+        <td style="padding:8px;text-align:center">0.0714</td>
+        <td style="padding:8px;text-align:center">0.0714</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">WinRate</td>
+        <td style="padding:8px;text-align:center">33%</td>
+        <td style="padding:8px;text-align:center">43%</td>
+        <td style="padding:8px;text-align:center">50%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">Contraction Ratio</td>
+        <td style="padding:8px;text-align:center">1.00</td>
+        <td style="padding:8px;text-align:center">0.83</td>
+        <td style="padding:8px;text-align:center">0.67</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">Accept Rate (high pain)</td>
+        <td style="padding:8px;text-align:center;color:#ff4444">0%</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">8%</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">17%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">Accept Rate (low pain)</td>
+        <td style="padding:8px;text-align:center">50%</td>
+        <td style="padding:8px;text-align:center">50%</td>
+        <td style="padding:8px;text-align:center">50%</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,100,0,0.1)">
+        <td style="padding:8px">Threshold Spread</td>
+        <td style="padding:8px;text-align:center">0.0047</td>
+        <td style="padding:8px;text-align:center">0.0071</td>
+        <td style="padding:8px;text-align:center">0.0051</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:12px;border-radius:8px;background:rgba(255,100,0,0.06);border:1px solid rgba(255,100,0,0.2)">
+      <div style="font-size:10px;color:#ffaa66;font-weight:700;margin-bottom:8px">CONSERVATIVE</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.6">
+        <div><span style="color:#00ff88;font-weight:700">P1✓</span> Contracts</div>
+        <div><span style="color:#00ff88;font-weight:700">P2✓</span> Recovers</div>
+        <div><span style="color:#ff4444;font-weight:700">P3✗</span> No fast reflex</div>
+        <div><span style="color:#ff4444;font-weight:700">P4✗</span> No breathing</div>
+        <div><span style="color:#00ff88;font-weight:700">P5✓</span> Stable</div>
+        <div style="margin-top:8px;color:#ffaa66;font-weight:700">3/5 PASS</div>
+      </div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:2px solid rgba(0,255,136,0.25)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:8px">NEUTRAL</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.6">
+        <div><span style="color:#00ff88;font-weight:700">P1✓</span> Contracts</div>
+        <div><span style="color:#00ff88;font-weight:700">P2✓</span> Recovers</div>
+        <div><span style="color:#00ff88;font-weight:700">P3✓</span> Fast reflex</div>
+        <div><span style="color:#00ff88;font-weight:700">P4✓</span> Breathing cycle</div>
+        <div><span style="color:#00ff88;font-weight:700">P5✓</span> No degeneration</div>
+        <div style="margin-top:8px;color:#00ff88;font-weight:700">5/5 PASS ✓</div>
+      </div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:8px">AGGRESSIVE</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.6">
+        <div><span style="color:#00ff88;font-weight:700">P1✓</span> Contracts</div>
+        <div><span style="color:#00ff88;font-weight:700">P2✓</span> Recovers</div>
+        <div><span style="color:#00ff88;font-weight:700">P3✓</span> Fast reflex</div>
+        <div><span style="color:#00ff88;font-weight:700">P4✓</span> Breathing cycle</div>
+        <div><span style="color:#00ff88;font-weight:700">P5✓</span> No degeneration</div>
+        <div style="margin-top:8px;color:#00ff88;font-weight:700">5/5 PASS ✓</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;padding:14px;border-radius:8px;background:rgba(0,100,200,0.08);border-left:3px solid #00aaff">
+    <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:6px">Criteria</div>
+    <div style="font-size:9px;color:#8ab;line-height:1.6">
+      <div>P1: Contracts under pain (accept rate drops)</div>
+      <div>P2: Recovers when calm (accept rate returns)</div>
+      <div>P3: Faster reflex in pain</div>
+      <div>P4: Breathing cycle visible</div>
+      <div>P5: No degeneration</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:12px;border-radius:8px;background:rgba(0,255,136,0.08);border:1px solid rgba(0,255,136,0.2)">
+    <div style="font-size:13px;color:#00ff88;font-weight:700;letter-spacing:2px">SYSTEM BREATHES</div>
+    <div style="font-size:10px;color:#66ffaa;margin-top:6px">This system IS an autonomic nervous system.</div>
+  </div>
+
+  <div style="margin-top:12px;padding:10px;border-radius:6px;background:rgba(180,100,255,0.06);border-left:2px solid #b464ff">
+    <div style="font-size:9px;color:#cc99ff;font-style:italic">
+      "Each module feels pain and adjusts itself. No central control. No optimization. Like a biological nervous system."
+    </div>
+  </div>
+</div>
+
+<!-- EXP-RESONANT-ORBIT-PROBE-v1 RESULTS -->
+<div style="margin:20px 0;padding:20px 24px;border-radius:12px;background:rgba(0,200,255,0.06);border:2px solid rgba(0,200,255,0.3);box-shadow:0 0 30px rgba(0,200,255,0.08)">
+  <div style="font-size:14px;font-weight:700;color:#00d4ff;margin-bottom:6px;letter-spacing:2px">
+    EXP-RESONANT-ORBIT-PROBE-v1 — Resonant Orbit Probe
+  </div>
+  <div style="font-size:11px;color:#8ab;line-height:1.8;margin-bottom:16px">
+    <div style="margin-bottom:8px"><span style="color:#00d4ff;font-weight:600">Research Question:</span> "Is this frequency energy on a resonant orbit (can sustain structure), or noise energy that cannot form structure?"</div>
+    <div style="margin-bottom:8px"><span style="color:#ffaa00;font-weight:600">Method:</span> Inject thin resonance probe at each bar. Measure: Δphase, Δcoherence, orbit_return_rate, decay_of_alignment. No thresholds tuned. No filters added. Pure orbit geometry observation.</div>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="padding:14px;border-radius:8px;background:rgba(0,200,255,0.06);border:1px solid rgba(0,200,255,0.2)">
+      <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:8px">Orbit Classification (591 surges)</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.8">
+        <div>On Orbit (RESONANT): <span style="color:#00ff88;font-weight:700">587 (99.3%)</span></div>
+        <div>Departed (noise): <span style="color:#ff4444;font-weight:700">4 (0.7%)</span></div>
+        <div style="margin-top:6px;color:#ffaa00;font-style:italic">Probe classifies almost everything as on-orbit</div>
+        <div style="color:#ffaa00;font-style:italic">→ Input too smooth, orbit departure barely detected</div>
+      </div>
+    </div>
+    <div style="padding:14px;border-radius:8px;background:rgba(0,200,255,0.06);border:1px solid rgba(0,200,255,0.2)">
+      <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:8px">Sustainability Separation</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.8">
+        <div>On-orbit surges: <span style="color:#00ff88;font-weight:700">0.7804</span></div>
+        <div>Departed surges: <span style="color:#ff4444;font-weight:700">0.3816</span></div>
+        <div>Separation: <span style="color:#00d4ff;font-weight:700">+0.3989</span></div>
+        <div style="margin-top:6px;color:#00ff88;font-style:italic">Sustainability SEES the difference</div>
+        <div style="color:#00ff88;font-style:italic">→ Physics is correct, measurement resolution insufficient</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;overflow-x:auto">
+    <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:8px">Blame × Orbit State Cross-Reference</div>
+    <table style="width:100%;border-collapse:collapse;font-size:9px;color:#8ab">
+      <tr style="border-bottom:1px solid rgba(0,200,255,0.2)">
+        <td style="padding:8px;text-align:left;color:#00d4ff;font-weight:700">Blame Class</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">ON ORBIT</td>
+        <td style="padding:8px;text-align:center;color:#ff4444">DEPARTED</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,200,255,0.1)">
+        <td style="padding:8px">JUSTIFIED</td>
+        <td style="padding:8px;text-align:center">6</td>
+        <td style="padding:8px;text-align:center">0</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,200,255,0.1)">
+        <td style="padding:8px">EARLY_WARNING</td>
+        <td style="padding:8px;text-align:center">336</td>
+        <td style="padding:8px;text-align:center">3</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,200,255,0.1)">
+        <td style="padding:8px">UNJUSTIFIED</td>
+        <td style="padding:8px;text-align:center">8</td>
+        <td style="padding:8px;text-align:center">1</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(0,200,255,0.1)">
+        <td style="padding:8px">EXOGENOUS</td>
+        <td style="padding:8px;text-align:center;color:#ffaa00;font-weight:700">237</td>
+        <td style="padding:8px;text-align:center">0</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:12px;border-radius:8px;background:rgba(255,68,68,0.06);border:1px solid rgba(255,68,68,0.2)">
+      <div style="font-size:10px;color:#ff4444;font-weight:700;margin-bottom:6px">P1 FAIL</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.5">
+        <div>Exogenous→Departed: <span style="color:#ff4444;font-weight:700">0.0%</span></div>
+        <div style="color:#ff8888;font-style:italic;margin-top:4px">All 237 exogenous surges classified as on-orbit</div>
+      </div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P2 PASS</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.5">
+        <div>Honest→On Orbit: <span style="color:#00ff88;font-weight:700">99.1%</span></div>
+        <div style="color:#ffaa00;font-style:italic;margin-top:4px">Trivial — nearly everything is on-orbit</div>
+      </div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P3 PASS</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.5">
+        <div>Orbit discriminates</div>
+        <div style="color:#00ff88;font-style:italic;margin-top:4px">Sustainability separation +0.40</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;padding:14px;border-radius:8px;background:rgba(255,170,0,0.08);border-left:3px solid #ffaa00">
+    <div style="font-size:10px;color:#ffaa00;font-weight:700;margin-bottom:6px">Diagnosis</div>
+    <div style="font-size:9px;color:#8ab;line-height:1.8">
+      <div>1. The PHYSICS is correct — sustainability score separates on/off by +0.40</div>
+      <div>2. The CLASSIFICATION fails — 99.1% on-orbit because inputs are already smoothed</div>
+      <div>3. The probe sees phase_alignment and coherence from PROCESSED outputs</div>
+      <div>4. It needs RAW phase flow (Δphase raw) — the trajectory, not the snapshot</div>
+      <div style="margin-top:8px;color:#00d4ff;font-weight:700">→ "We measured the snapshot, not the orbit."</div>
+      <div style="color:#00d4ff;font-weight:700">→ Next: measure raw frequency flow — Δphase, Δcoherence at frequency level</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:12px;border-radius:8px;background:rgba(0,200,255,0.08);border:1px solid rgba(0,200,255,0.2)">
+    <div style="font-size:13px;color:#00d4ff;font-weight:700;letter-spacing:2px">ORBIT CONCEPT VALIDATED — RESOLUTION INSUFFICIENT</div>
+    <div style="font-size:10px;color:#66ccff;margin-top:6px">"The question is right. The probe needs to see the raw wave, not the processed state."</div>
+  </div>
+
+  <div style="margin-top:12px;padding:10px;border-radius:6px;background:rgba(180,100,255,0.06);border-left:2px solid #b464ff">
+    <div style="font-size:9px;color:#cc99ff;font-style:italic">
+      "We no longer ask 'is the signal correct?' We ask 'does this wave return to the same orbit?' — but we must measure the wave itself, not its shadow."
+    </div>
+  </div>
+</div>
+
+<!-- EXP-SHADOW-WAVE-GENESIS-v1 RESULTS -->
+<div style="margin:20px 0;padding:20px 24px;border-radius:12px;background:rgba(180,0,255,0.06);border:2px solid rgba(180,0,255,0.3);box-shadow:0 0 30px rgba(180,0,255,0.08)">
+  <div style="font-size:14px;font-weight:700;color:#b464ff;margin-bottom:6px;letter-spacing:2px">
+    EXP-SHADOW-WAVE-GENESIS-v1 — Shadow Wave Genesis
+  </div>
+  <div style="font-size:11px;color:#9977bb;line-height:1.8;margin-bottom:16px">
+    <div style="margin-bottom:8px"><span style="color:#b464ff;font-weight:600">Research Question:</span> "Is collapse the DEATH of a wave, or the BIRTH of a new wave? Does a second orbit candidate appear before the first one dies?"</div>
+    <div style="margin-bottom:8px"><span style="color:#ffaa00;font-weight:600">Method:</span> Track R_accum (accumulated resonance energy = integral), phase bifurcation (two orbit candidates coexisting), identity separation (can we distinguish this wave?). At each collapse, look backward: was bifurcation forming BEFORE collapse?</div>
+    <div><span style="color:#00ff88;font-weight:600">Key Insight:</span> t = structural dwell time, not clock time. Observation (dW/dt) thins but integral (∫resonance dt) strengthens. Collapse = wave overlap, not death.</div>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+    <div style="padding:14px;border-radius:8px;background:rgba(180,0,255,0.06);border:1px solid rgba(180,0,255,0.2);text-align:center">
+      <div style="font-size:9px;color:#9977bb">Total Collapses</div>
+      <div style="font-size:26px;font-weight:700;color:#b464ff;margin:4px 0">135</div>
+      <div style="font-size:8px;color:#9977bb">4 days × ~34/day</div>
+    </div>
+    <div style="padding:14px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2);text-align:center">
+      <div style="font-size:9px;color:#448877">TRANSITION (new wave born)</div>
+      <div style="font-size:26px;font-weight:700;color:#00ff88;margin:4px 0">28.1%</div>
+      <div style="font-size:8px;color:#448877">38 / 135 collapses</div>
+    </div>
+    <div style="padding:14px;border-radius:8px;background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.2);text-align:center">
+      <div style="font-size:9px;color:#884444">STRUCTURAL FAILURE</div>
+      <div style="font-size:26px;font-weight:700;color:#ff4444;margin:4px 0">71.9%</div>
+      <div style="font-size:8px;color:#884444">97 / 135 collapses</div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="padding:14px;border-radius:8px;background:rgba(0,200,255,0.06);border:1px solid rgba(0,200,255,0.2)">
+      <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:8px">Bifurcation Comparison</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.8">
+        <div>TRANSITION mean bifurcation: <span style="color:#00ff88;font-weight:700">0.3543</span></div>
+        <div>FAILURE mean bifurcation: <span style="color:#ff4444;font-weight:700">0.1280</span></div>
+        <div>Separation: <span style="color:#b464ff;font-weight:700">+0.2262</span></div>
+        <div style="margin-top:6px;color:#00ff88;font-style:italic">Bifurcation forms BEFORE transition — shadow wave pre-exists</div>
+      </div>
+    </div>
+    <div style="padding:14px;border-radius:8px;background:rgba(0,200,255,0.06);border:1px solid rgba(0,200,255,0.2)">
+      <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:8px">Recovery After Collapse</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.8">
+        <div>Transition recovery rate: <span style="color:#00ff88;font-weight:700">18.4%</span></div>
+        <div>Failure recovery rate: <span style="color:#ff8888;font-weight:700">11.3%</span></div>
+        <div style="margin-top:6px;color:#00ff88;font-style:italic">Transitions recover more — new wave continues</div>
+        <div style="color:#ffaa00;font-style:italic">Shadow shape at collapse: EXHAUST (82%) > COLLAPSE (13%)</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P1 PASS</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.5">
+        <div>Both types exist</div>
+        <div style="color:#00ff88;font-style:italic;margin-top:4px">28% TRANSITION, 72% FAILURE</div>
+      </div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P2 PASS</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.5">
+        <div>Transition recovers more</div>
+        <div style="color:#00ff88;font-style:italic;margin-top:4px">18.4% vs 11.3%</div>
+      </div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P3 PASS</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.5">
+        <div>Bifurcation precedes transition</div>
+        <div style="color:#00ff88;font-style:italic;margin-top:4px">Separation +0.2262</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;padding:14px;border-radius:8px;background:rgba(0,255,136,0.08);border-left:3px solid #00ff88">
+    <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">Verdict: SHADOW WAVE GENESIS DETECTED — 3/3 PASS</div>
+    <div style="font-size:9px;color:#8ab;line-height:1.8">
+      <div>1. Collapse is NOT always death — 28% show signs of wave TRANSITION</div>
+      <div>2. Phase bifurcation forms BEFORE transition collapses (mean 0.35 vs 0.13)</div>
+      <div>3. Transition collapses recover more often — the new wave continues</div>
+      <div>4. Pain is similar at both types (~0.64) — pain cannot distinguish genesis from death</div>
+      <div style="margin-top:8px;color:#b464ff;font-weight:700">Collapse = not just "end" — sometimes "overlap" — sometimes "wave birth"</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:12px;border-radius:8px;background:rgba(180,0,255,0.08);border:1px solid rgba(180,0,255,0.2)">
+    <div style="font-size:13px;color:#b464ff;font-weight:700;letter-spacing:2px">SHADOW WAVE GENESIS — CONFIRMED</div>
+    <div style="font-size:10px;color:#cc99ff;margin-top:6px">"Before the old wave dies, a new wave is already being born. Collapse is transition."</div>
+  </div>
+
+  <div style="margin-top:12px;padding:10px;border-radius:6px;background:rgba(180,100,255,0.06);border-left:2px solid #b464ff">
+    <div style="font-size:9px;color:#cc99ff;font-style:italic">
+      "We are not a system that catches waves. We are a system that detects when waves are born and when they overlap. Exit is not escape — it is wave transition avoidance."
+    </div>
+  </div>
+</div>
+
 <div style="text-align:center;padding:30px;font-size:10px;color:#334">
-  SOAR Brain v2 — Feb 19, 2026 — 11,257 commits / 59 days / 232 files / 101 evidence logs
+  SOAR Brain v2 — Feb 19, 2026 — 11,300 commits / 59 days / 234 files / 103 evidence logs
 </div>
 
 </div>
