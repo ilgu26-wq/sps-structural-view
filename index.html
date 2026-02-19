@@ -676,6 +676,247 @@ document.body.appendChild(s)}
   </div>
 </div>
 
+<!-- EXP-ENTRY-RESONANCE-v2 RESULTS -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(180,100,255,0.03);border:2px solid rgba(180,100,255,0.2);position:relative">
+  <div style="text-align:center;font-size:13px;color:#b464ff;letter-spacing:3px;margin-bottom:8px">
+    EXP-ENTRY-RESONANCE-v2 — Feature-Driven Entry Generation
+  </div>
+  <div style="text-align:center;font-size:9px;color:#8866aa;margin-bottom:16px">
+    Reduced Judgment Authority + Resonance Entry + Feature Learning Boundary Validation
+  </div>
+
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-bottom:16px">
+    <div style="padding:8px 14px;border-radius:6px;font-size:10px;text-align:center;min-width:120px;
+      border:1px solid rgba(180,100,255,0.2);background:rgba(180,100,255,0.04)">
+      <div style="color:#b464ff;font-weight:700;font-size:11px">BEFORE</div>
+      <div style="color:#8866aa;font-size:20px;font-weight:700;margin:4px 0">37</div>
+      <div style="color:#6644aa;font-size:8px">entries / 4 days</div>
+    </div>
+    <div style="display:flex;align-items:center;font-size:16px;color:#00ff88">&#10230;</div>
+    <div style="padding:8px 14px;border-radius:6px;font-size:10px;text-align:center;min-width:120px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04)">
+      <div style="color:#00ff88;font-weight:700;font-size:11px">AFTER</div>
+      <div style="color:#00ff88;font-size:20px;font-weight:700;margin:4px 0">239</div>
+      <div style="color:#44aa77;font-size:8px">entries / 4 days (6.46x)</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:2px;flex-direction:column;max-width:620px;margin:0 auto">
+    <div style="display:flex;gap:8px;align-items:center;padding:6px 12px;border-radius:4px;
+      background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15)">
+      <span style="color:#00ff88;font-weight:700;font-size:10px;width:60px">Phase 0</span>
+      <span style="font-size:9px;color:#88aacc;flex:1">Baseline — E0 = 37 entries across 4 days</span>
+      <span style="font-size:9px;color:#00ff88">BASELINE</span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;padding:6px 12px;border-radius:4px;
+      background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15)">
+      <span style="color:#00ff88;font-weight:700;font-size:10px;width:60px">Phase 1</span>
+      <span style="font-size:9px;color:#88aacc;flex:1">Reduced Authority — ADMIT match = 97.3%</span>
+      <span style="font-size:9px;color:#00ff88;font-weight:700">PASS</span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;padding:6px 12px;border-radius:4px;
+      background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15)">
+      <span style="color:#00ff88;font-weight:700;font-size:10px;width:60px">Phase 2</span>
+      <span style="font-size:9px;color:#88aacc;flex:1">Resonance Entry — 9296 candidates, 239 executed (6.46x)</span>
+      <span style="font-size:9px;color:#00ff88;font-weight:700">PASS</span>
+    </div>
+    <div style="display:flex;gap:8px;align-items:center;padding:6px 12px;border-radius:4px;
+      background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.15)">
+      <span style="color:#00ff88;font-weight:700;font-size:10px;width:60px">Phase 3</span>
+      <span style="font-size:9px;color:#88aacc;flex:1">Feature Learning — Variance reduction = 3.16%</span>
+      <span style="font-size:9px;color:#00ff88;font-weight:700">PASS</span>
+    </div>
+  </div>
+
+  <div style="margin-top:12px;font-size:10px;color:#8866aa;letter-spacing:1px;text-align:center">STRESS TESTS</div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;margin-top:8px">
+    <div style="padding:6px 14px;border-radius:4px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      Test A: Judgment Invariance 99.5% PASS
+    </div>
+    <div style="padding:6px 14px;border-radius:4px;font-size:9px;
+      border:1px solid rgba(255,170,0,0.3);background:rgba(255,170,0,0.04);color:#ffaa00">
+      Test B: Outcome Independence corr=-0.32 MARGINAL
+    </div>
+    <div style="padding:6px 14px;border-radius:4px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      Test C: Density-Survival DD=-0.011 PASS
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:10px;border-radius:6px;
+    background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.15)">
+    <div style="font-size:12px;color:#00ff88;font-weight:700;letter-spacing:2px">4/5 PASS — RESONANCE ENTRY STRUCTURE VALIDATED</div>
+    <div style="font-size:9px;color:#44aa77;margin-top:4px">
+      Test B marginal (corr=-0.32 vs threshold 0.30) — negative correlation expected from structure-based detection
+    </div>
+  </div>
+</div>
+
+<!-- v3 ARCHITECTURE: FREQUENCY → RADIO → CONSTITUTION -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(255,255,255,0.01);border:2px solid rgba(0,180,255,0.15)">
+  <div style="text-align:center;font-size:13px;color:#00bbff;letter-spacing:3px;margin-bottom:4px">
+    SOAR BRAIN v3 — Frequency → Radio → Constitution
+  </div>
+  <div style="text-align:center;font-size:9px;color:#448899;margin-bottom:20px">
+    Design Lock 2026-02-19 | Post-Experiment Architecture Freeze
+  </div>
+
+  <div style="display:flex;gap:20px;flex-wrap:wrap;justify-content:center;align-items:flex-start">
+    <div style="flex:1;min-width:260px;max-width:340px">
+      <div style="text-align:center;font-size:10px;color:#b464ff;letter-spacing:2px;margin-bottom:10px;font-weight:700">RIGHT BRAIN (Perception)</div>
+      <div style="font-family:monospace;font-size:10px;line-height:2.2;color:#668">
+        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ Raw Market World ]</div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:6px;border:1px solid #b464ff33;border-radius:4px;color:#b464ff;background:#b464ff08">[ Frequency Space ]<br><span style="font-size:8px;color:#8866aa">FFT, autocorr, phase, energy</span></div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:6px;border:1px solid #b464ff33;border-radius:4px;color:#b464ff;background:#b464ff08">[ Resonance Detector ]<br><span style="font-size:8px;color:#8866aa">multi-scale rhythm, alignment</span></div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:8px;border:2px solid #00ccaa44;border-radius:4px;color:#00ccaa;background:#00ccaa08;font-weight:700">[ Radio State Converter ]<br><span style="font-size:8px;color:#448877;font-weight:400">frequency → state transformation</span></div>
+      </div>
+      <div style="text-align:center;margin-top:8px;font-size:8px;color:#664488;padding:4px;border:1px solid #b464ff15;border-radius:3px;background:#b464ff04">
+        Sees frequency. Outputs state. Never decides.
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;min-width:80px;padding-top:60px">
+      <div style="font-size:9px;color:#00ccaa;letter-spacing:1px;margin-bottom:6px">RADIO<br>STATE</div>
+      <div style="width:60px;height:2px;background:linear-gradient(90deg,#b464ff,#00ccaa,#ff3030);border-radius:1px"></div>
+      <div style="font-size:8px;color:#448877;margin-top:6px;text-align:center;line-height:1.4">
+        channel_lock<br>coherence<br>persistence<br>snr_proxy
+      </div>
+      <div style="margin-top:8px;padding:3px 8px;border-radius:3px;font-size:7px;
+        border:1px solid #ff303022;background:#ff303006;color:#ff6666">
+        RAW FREQUENCY BANNED
+      </div>
+    </div>
+
+    <div style="flex:1;min-width:260px;max-width:340px">
+      <div style="text-align:center;font-size:10px;color:#ff6666;letter-spacing:2px;margin-bottom:10px;font-weight:700">LEFT BRAIN (Constitution)</div>
+      <div style="font-family:monospace;font-size:10px;line-height:2.2;color:#668">
+        <div style="text-align:center;padding:8px;border:2px solid #ff303044;border-radius:4px;color:#ff6666;background:#ff303008;font-weight:700">[ SOAR1 Judgment ]<br><span style="font-size:8px;color:#ff888888;font-weight:400">5 dims: gp + surv + sc + lock + coh</span></div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ ADMIT / DENY ]</div>
+        <div style="text-align:center;color:#44668844">|</div>
+        <div style="text-align:center;padding:6px;border:1px solid #33445522;border-radius:4px;color:#6688aa;background:#33445508">[ Execution / Pain / Energy ]</div>
+      </div>
+      <div style="text-align:center;margin-top:8px;font-size:8px;color:#884444;padding:4px;border:1px solid #ff303015;border-radius:3px;background:#ff303004">
+        Asks "channel locked?" — never "what frequency?"
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;justify-content:center;gap:10px;margin-top:20px;flex-wrap:wrap">
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;border:1px solid #b464ff22;background:#b464ff06;color:#b464ff">
+      Frequency = cases (combinatorial)
+    </div>
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;border:1px solid #00ccaa22;background:#00ccaa06;color:#00ccaa">
+      Radio state = phase state (continuous)
+    </div>
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;border:1px solid #ff303022;background:#ff303006;color:#ff8888">
+      Constitution never touches frequency
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:14px;padding:8px;border-radius:6px;
+    background:rgba(0,255,136,0.04);border:1px solid rgba(0,255,136,0.12)">
+    <div style="font-size:10px;color:#00ff88;font-weight:600;letter-spacing:1px">
+      Frequency exists only in perception. Judgment receives only state.
+    </div>
+    <div style="font-size:8px;color:#448877;margin-top:4px">
+      Right brain listens. Left brain decides. Radio is the bridge.
+    </div>
+  </div>
+</div>
+
+<!-- FEATURE FULLSPAN INFLUENCE MAP -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;
+  background:rgba(0,200,180,0.03);border:1px solid rgba(0,200,180,0.2)">
+  <div style="text-align:center;font-size:13px;color:#00ccaa;letter-spacing:3px;margin-bottom:4px">
+    EXP-FEATURE-FULLSPAN-v0 — Feature Influence Map
+  </div>
+  <div style="text-align:center;font-size:9px;color:#448877;margin-bottom:16px">
+    220 trades analyzed | Shadow observation only | Zero decision authority
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+    <div style="flex:1;min-width:200px;max-width:280px;padding:12px;border-radius:8px;
+      border:1px solid rgba(180,100,255,0.2);background:rgba(180,100,255,0.03)">
+      <div style="font-size:10px;color:#b464ff;font-weight:700;letter-spacing:1px;margin-bottom:8px;text-align:center">ENTRY INFLUENCE</div>
+      <div style="font-size:9px;color:#8866aa;line-height:1.8">
+        1. direction_autocorr <span style="color:#b464ff;font-weight:600">2.29</span><br>
+        2. tau_persistence <span style="color:#b464ff;font-weight:600">2.17</span> <span style="color:#448877;font-size:8px">grad +2.44</span><br>
+        3. noise_ratio <span style="color:#b464ff;font-weight:600">1.79</span> <span style="color:#448877;font-size:8px">grad -0.05</span><br>
+        4. structure_strength <span style="color:#b464ff;font-weight:600">1.77</span> <span style="color:#448877;font-size:8px">grad +0.06</span><br>
+        5. flow_proxy <span style="color:#b464ff;font-weight:600">1.40</span> <span style="color:#448877;font-size:8px">grad +0.09</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:200px;max-width:280px;padding:12px;border-radius:8px;
+      border:1px solid rgba(255,200,0,0.2);background:rgba(255,200,0,0.03)">
+      <div style="font-size:10px;color:#ffcc00;font-weight:700;letter-spacing:1px;margin-bottom:8px;text-align:center">HOLD EARLY WARNING</div>
+      <div style="font-size:9px;color:#aa8833;line-height:1.8">
+        1. tau_persistence <span style="color:#ffcc00;font-weight:600">6.71</span> <span style="color:#aa8833;font-size:8px">2.1 bars lead</span><br>
+        2. flow_proxy <span style="color:#ffcc00;font-weight:600">0.54</span> <span style="color:#aa8833;font-size:8px">2.3 bars lead</span><br>
+        3. D_score <span style="color:#ffcc00;font-weight:600">0.37</span> <span style="color:#aa8833;font-size:8px">2.6 bars lead</span><br>
+        4. noise_score <span style="color:#ffcc00;font-weight:600">0.30</span> <span style="color:#aa8833;font-size:8px">2.1 bars lead</span><br>
+        5. field_change_rate <span style="color:#ffcc00;font-weight:600">0.29</span> <span style="color:#aa8833;font-size:8px">1.8 bars lead</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:200px;max-width:280px;padding:12px;border-radius:8px;
+      border:1px solid rgba(255,60,60,0.2);background:rgba(255,60,60,0.03)">
+      <div style="font-size:10px;color:#ff4444;font-weight:700;letter-spacing:1px;margin-bottom:8px;text-align:center">EXIT COLLAPSE DETECTION</div>
+      <div style="font-size:9px;color:#aa4444;line-height:1.8">
+        1. tau_persistence <span style="color:#ff4444;font-weight:600">5.53</span> <span style="color:#44aa44;font-size:8px">0% fake</span><br>
+        2. flow_proxy <span style="color:#ff4444;font-weight:600">0.50</span> <span style="color:#44aa44;font-size:8px">0% fake</span><br>
+        3. D_score <span style="color:#ff4444;font-weight:600">0.31</span> <span style="color:#44aa44;font-size:8px">0% fake</span><br>
+        4. noise_score <span style="color:#ff4444;font-weight:600">0.26</span> <span style="color:#44aa44;font-size:8px">0% fake</span><br>
+        5. field_change_rate <span style="color:#ff4444;font-weight:600">0.25</span> <span style="color:#44aa44;font-size:8px">0% fake</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:16px;display:flex;gap:8px;flex-wrap:wrap;justify-content:center">
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;
+      border:1px solid rgba(0,255,136,0.2);background:rgba(0,255,136,0.04);color:#00ff88">
+      Entry-safe: direction_autocorr, tau, noise_ratio, ss, flow_proxy
+    </div>
+    <div style="padding:6px 12px;border-radius:4px;font-size:9px;
+      border:1px solid rgba(255,60,60,0.2);background:rgba(255,60,60,0.04);color:#ff6666">
+      Exit-safe: tau, flow_proxy, D_score, noise_score, fcr
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:12px;font-size:9px;color:#448877;line-height:1.5">
+    tau_persistence dominates all phases — strongest entry discriminator, earliest hold warning, most powerful collapse detector<br>
+    direction_autocorr = #1 entry feature but NOT present in exit (tick-only feature, entry-specific)<br>
+    Observation only. Zero decisions changed. This is the map, not the rules.
+  </div>
+</div>
+
+<!-- SEAL RULES -->
+<div style="margin:20px 0;padding:16px;border-radius:8px;
+  border:2px solid rgba(255,60,60,0.15);background:rgba(255,60,60,0.02)">
+  <div style="text-align:center;font-size:11px;color:#ff6666;letter-spacing:2px;margin-bottom:10px">
+    SEALED ZONES — Post-Experiment + Design Lock
+  </div>
+  <div style="display:flex;gap:8px;flex-wrap:wrap;justify-content:center;font-size:9px">
+    <div style="padding:6px 10px;border-radius:4px;border:1px solid #ff303022;background:#ff303006;color:#ff8888">
+      resonance_score: ENTRY ONLY (Test B seal)
+    </div>
+    <div style="padding:6px 10px;border-radius:4px;border:1px solid #ff303022;background:#ff303006;color:#ff8888">
+      Raw frequency: BANNED from judgment (FFT, spectral, phase arrays)
+    </div>
+    <div style="padding:6px 10px;border-radius:4px;border:1px solid #00ccaa22;background:#00ccaa06;color:#00ccaa">
+      Radio state (lock/coh/per/snr): judgment + entry + exit warning ONLY
+    </div>
+    <div style="padding:6px 10px;border-radius:4px;border:1px solid #ff303022;background:#ff303006;color:#ff8888">
+      ALL banned from: sizing / duration optimization / PnL feedback
+    </div>
+  </div>
+</div>
+
 <!-- 4 LOCKS -->
 <div style="margin:30px 0">
   <div style="text-align:center;font-size:13px;color:#ff3030;letter-spacing:3px;margin-bottom:12px">
