@@ -17,9 +17,7 @@ observe, anchor, and verify the evolution of SOAR-based systems.
 
 ### Direct HTML (always works)
 - index (baseline):  
-  🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index.html  
-- index2 (current / extended):  
-  🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index2.html  
+  🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index.html   
 
 > Click **“View raw”** to open the exact HTML surface.
 
