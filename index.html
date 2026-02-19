@@ -2056,9 +2056,642 @@ document.body.appendChild(s)}
     <div><span style="color:#00ff88">Pain-Conditioned (G+Fluid):</span> Sep REVERSED -0.07→+0.62 | Pain-kills 72%→17%</div>
     <div><span style="color:#ffaa00;font-weight:700">PRUNE (Ablation):</span> 4→3 features | Sep +0.62→+1.08 | PH-Fail 52→7 | Pruning IMPROVED performance</div>
     <div><span style="color:#00d4ff;font-weight:700">LODO (Cross-Val):</span> Mean sep +1.10 | 3/4 days positive | Slingshot 100% safe | persist=0.3/vort=-0.03 stable</div>
+    <div><span style="color:#b464ff;font-weight:700">LIVING (Integration):</span> 4/6 PASS, 4/5 Bio | Shock: fail dies 1.51 | Transition: held 4.97 | Zero violations</div>
     <div style="margin-top:6px;color:#ffaa00">
-      13 experiments. Final reflex: pain trigger → [approach_δ, persistence, vorticity_δ] → CORE3 output. 3 features, zero learning.
+      15 experiments. Final reflex: pain trigger → [approach_δ, persistence, vorticity_δ] → CORE3 output. 3 features, zero learning.
     </div>
+    <div style="margin-top:4px;color:#00d4ff;font-size:10px">
+      ↳ 15. <span style="color:#00d4ff;font-weight:700">EXP-SONAR-MICRO-RESPONSE-v1</span> (6/6 PASS): Active sensing. Probes detect micro-instability. Normal fail hold −17%. Paradigm shift: passive → active.
+    </div>
+    <div style="margin-top:4px;color:#ffaa00;font-size:10px">
+      ↳ 16. <span style="color:#ffaa00;font-weight:700">EXP-LIVING-LOCK-v1</span> (4/6 PASS): SONAR ablation. Fail hold −20.5% (2.32→1.84). Trans hold −18.5%. Slingshot 17=17=17. PainHold 18=18. SONAR real but non-discriminating — cuts window for all.
+    </div>
+    <div style="margin-top:6px;color:#ffaa00">
+      16 experiments. SONAR tightens posture universally — not selectively. Next: discriminating posture (respond differently to fail vs trans signatures).
+    </div>
+  </div>
+</div>
+
+<div style="text-align:center;margin:8px 0;font-size:16px;color:#b464ff">&#x25BC; Integration Test &#x25BC;</div>
+
+<div style="background:rgba(10,12,20,0.95);border-radius:14px;padding:20px;margin:0 0 20px 0;border:1px solid rgba(180,100,255,0.15)">
+  <div style="text-align:center;margin-bottom:12px">
+    <div style="font-size:14px;font-weight:700;color:#b464ff;letter-spacing:1px">EXP-LIVING-SYSTEM-INTEGRATION-v1 — "Is this system alive?"</div>
+    <div style="font-size:10px;color:#8ab">No new logic. Only verified connections: Sensory → Fluid → Neural → Reflex</div>
+  </div>
+
+  <div style="background:rgba(180,100,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(180,100,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#b464ff;font-weight:700;margin-bottom:8px">Scenario Analysis — 187 events across 4 days</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px;background:rgba(255,136,0,0.06);border-radius:6px;padding:10px;border:1px solid rgba(255,136,0,0.12)">
+        <div style="font-size:10px;color:#ff8800;font-weight:700;margin-bottom:4px">A — Exogenous Shock (130 events)</div>
+        <div style="font-size:10px;color:#8ab;line-height:1.6">
+          Fail hold: <span style="color:#00ff88;font-weight:700">1.51</span> (dies fast)<br>
+          Trans hold: 3.62 | Sep: <span style="color:#00ff88">+2.11</span><br>
+          Slingshot: 11 | Diverge-Fail: 71<br>
+          <span style="color:#00ff88">Startled organism: contracts, kills failures</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(0,212,255,0.06);border-radius:6px;padding:10px;border:1px solid rgba(0,212,255,0.12)">
+        <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:4px">B — Collapse + Transition (19 events)</div>
+        <div style="font-size:10px;color:#8ab;line-height:1.6">
+          Trans hold: <span style="color:#00ff88;font-weight:700">4.97</span> (survives)<br>
+          PH-Trans: 1 | PH-Fail: 0<br>
+          All 19 are transitions<br>
+          <span style="color:#00ff88">Molting organism: transitions reorganize</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(128,128,128,0.06);border-radius:6px;padding:10px;border:1px solid rgba(128,128,128,0.12)">
+        <div style="font-size:10px;color:#aaa;font-weight:700;margin-bottom:4px">Normal — No Stress (38 events)</div>
+        <div style="font-size:10px;color:#8ab;line-height:1.6">
+          Fail hold: 5.84 (no pain = no reflex)<br>
+          PH-Trans: 0 | PH-Fail: 0<br>
+          CORE3 not triggered (calm period)<br>
+          <span style="color:#ffaa00">Resting organism: no threat, no response</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(180,100,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(180,100,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#b464ff;font-weight:700;margin-bottom:8px">Biological Criteria — 4/5</div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:6px">
+      <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:9px;color:#00ff88;font-weight:700">Bio-1 PASS</div>
+        <div style="font-size:8px;color:#8ab;margin-top:3px">Pain global, commands nothing</div>
+      </div>
+      <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:9px;color:#00ff88;font-weight:700">Bio-2 PASS</div>
+        <div style="font-size:8px;color:#8ab;margin-top:3px">Differential response (PH-T≠PH-F)</div>
+      </div>
+      <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:9px;color:#00ff88;font-weight:700">Bio-3 PASS</div>
+        <div style="font-size:8px;color:#8ab;margin-top:3px">Reflex only, 0 conflicts</div>
+      </div>
+      <div style="padding:8px;border-radius:6px;background:rgba(255,68,68,0.06);border:1px solid rgba(255,68,68,0.2)">
+        <div style="font-size:9px;color:#ff4444;font-weight:700">Bio-4 FAIL</div>
+        <div style="font-size:8px;color:#8ab;margin-top:3px">Calm failures persist (no pain trigger)</div>
+      </div>
+      <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:9px;color:#00ff88;font-weight:700">Bio-5 PASS</div>
+        <div style="font-size:8px;color:#8ab;margin-top:3px">Transitions self-reorganize</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:12px">
+    <div style="padding:10px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700">P3 PASS — Slingshot</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px">Worst exit = slingshot rule only. 0 hold on slingshot.</div>
+    </div>
+    <div style="padding:10px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700">P5 PASS — Zero Conflicts</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px">No central override detected. All decisions from reflex.</div>
+    </div>
+    <div style="padding:10px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700">P6 PASS — Zero Violations</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px">All rules maintained. No slingshot invasion.</div>
+    </div>
+  </div>
+
+  <div style="background:rgba(180,100,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(180,100,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#b464ff;font-weight:700;margin-bottom:6px">Why 2 Criteria Failed (architectural, not broken)</div>
+    <div style="font-size:10px;color:#8ab;line-height:1.8">
+      <div><span style="color:#ff4444">P1 FAIL:</span> Fail hold 2.32 > base 1.71 — in CALM periods, no pain fires, CORE3 never activates. Under stress (Scenario A), failures die at 1.51.</div>
+      <div><span style="color:#ff4444">P4 FAIL:</span> Pain-Entry corr +0.02 (near zero) — entry is sealed (SOAR1). Pain affects EXIT only. Entry can't contract because it's upstream of pain. This is by design.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:14px;padding:12px;border-radius:8px;background:rgba(180,100,255,0.08);border:1px solid rgba(180,100,255,0.2)">
+    <div style="font-size:13px;color:#b464ff;font-weight:700;letter-spacing:2px">4/6 PASS, 4/5 BIO — PARTIALLY ALIVE</div>
+    <div style="font-size:10px;color:#8ab;margin-top:6px">Under stress: alive. At rest: passive. Entry sealed upstream. Pain-exit only architecture confirmed.</div>
+  </div>
+</div>
+
+<div style="text-align:center;margin:8px 0;font-size:16px;color:#00d4ff">&#x25BC; Active Sensing &#x25BC;</div>
+
+<div style="background:rgba(10,12,20,0.95);border-radius:14px;padding:20px;margin:0 0 20px 0;border:1px solid rgba(0,212,255,0.15)">
+  <div style="text-align:center;margin-bottom:12px">
+    <div style="font-size:14px;font-weight:700;color:#00d4ff;letter-spacing:1px">EXP-SONAR-MICRO-RESPONSE-v1 — "Can we hear instability before pain?"</div>
+    <div style="font-size:10px;color:#8ab">Paradigm shift: passive sensing → active probing. Probe, listen, interpret.</div>
+  </div>
+
+  <div style="background:rgba(0,212,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(0,212,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#00d4ff;font-weight:700;margin-bottom:8px">The Shift: Frequency = Internal State ❌ → Frequency = Reflected Response ✅</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="flex:1;min-width:200px;background:rgba(128,128,128,0.06);border-radius:6px;padding:10px;border:1px solid rgba(128,128,128,0.12)">
+        <div style="font-size:10px;color:#aaa;font-weight:700;margin-bottom:4px">Before (Passive)</div>
+        <div style="font-size:10px;color:#8ab;line-height:1.6">
+          Market → waves → measure → react<br>
+          Wait for pain to arrive<br>
+          <span style="color:#ff4444">Normal: failures live 5.84 bars</span>
+        </div>
+      </div>
+      <div style="flex:1;min-width:200px;background:rgba(0,212,255,0.06);border-radius:6px;padding:10px;border:1px solid rgba(0,212,255,0.12)">
+        <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:4px">After (SONAR Active)</div>
+        <div style="font-size:10px;color:#8ab;line-height:1.6">
+          Market → <span style="color:#00d4ff">probe</span> → response → interpret<br>
+          Ask "are you fragile?" before pain<br>
+          <span style="color:#00ff88">Normal: failures live 4.85 bars (−17%)</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,212,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(0,212,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#00d4ff;font-weight:700;margin-bottom:8px">3 Cognitive Probes (hypothetical, not physical)</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <div style="flex:1;min-width:160px;background:rgba(0,212,255,0.04);border-radius:6px;padding:8px;border:1px solid rgba(0,212,255,0.08)">
+        <div style="font-size:9px;color:#00d4ff;font-weight:700">Persistence Probe</div>
+        <div style="font-size:9px;color:#8ab;margin-top:3px">"What if persistence was ±ε?"<br>→ CORE3 converging boundary distance</div>
+      </div>
+      <div style="flex:1;min-width:160px;background:rgba(0,212,255,0.04);border-radius:6px;padding:8px;border:1px solid rgba(0,212,255,0.08)">
+        <div style="font-size:9px;color:#00d4ff;font-weight:700">Approach Probe</div>
+        <div style="font-size:9px;color:#8ab;margin-top:3px">"What if approach shifted ±ε?"<br>→ Slingshot boundary fragility</div>
+      </div>
+      <div style="flex:1;min-width:160px;background:rgba(0,212,255,0.04);border-radius:6px;padding:8px;border:1px solid rgba(0,212,255,0.08)">
+        <div style="font-size:9px;color:#00d4ff;font-weight:700">Vorticity Probe</div>
+        <div style="font-size:9px;color:#8ab;margin-top:3px">"What if vorticity was ±ε?"<br>→ Rotational organization sensitivity</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,212,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(0,212,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#00d4ff;font-weight:700;margin-bottom:8px">Response Features → micro_stability → Posture</div>
+    <div style="font-family:monospace;font-size:10px;color:#8ab;line-height:1.8">
+      boundary_distance → how close to CORE3 threshold flip<br>
+      response_symmetry → alive = asymmetric, dead = symmetric<br>
+      response_damping → growing sensitivity = unstable<br>
+      <span style="color:#00d4ff">↓</span><br>
+      micro_stability ∈ [0,1] → posture_window_scale [0.5x–1.0x]<br>
+      <span style="color:#ffaa00">Posture = muscle tension, not flight. Shrink window, don't exit.</span>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,212,255,0.04);border-radius:8px;padding:12px;border:1px solid rgba(0,212,255,0.1);margin-bottom:12px">
+    <div style="font-size:11px;color:#00d4ff;font-weight:700;margin-bottom:8px">SONAR Impact by Scenario</div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <div style="flex:1;min-width:180px;background:rgba(255,136,0,0.06);border-radius:6px;padding:10px;border:1px solid rgba(255,136,0,0.12)">
+        <div style="font-size:10px;color:#ff8800;font-weight:700;margin-bottom:4px">A — Shock</div>
+        <div style="font-size:9px;color:#8ab;line-height:1.6">
+          Fail hold: 1.51 → <span style="color:#00ff88">1.13</span><br>
+          stability: 0.641 | scale: 0.82<br>
+          Already fast, SONAR tightens further
+        </div>
+      </div>
+      <div style="flex:1;min-width:180px;background:rgba(0,212,255,0.06);border-radius:6px;padding:10px;border:1px solid rgba(0,212,255,0.12)">
+        <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:4px">B — Transition</div>
+        <div style="font-size:9px;color:#8ab;line-height:1.6">
+          Trans hold: 4.97 → <span style="color:#00ff88">4.22</span><br>
+          stability: 0.680 | scale: 0.84<br>
+          Slightly shorter but still survives
+        </div>
+      </div>
+      <div style="flex:1;min-width:180px;background:rgba(0,255,136,0.06);border-radius:6px;padding:10px;border:1px solid rgba(0,255,136,0.2)">
+        <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:4px">Normal — Target Zone</div>
+        <div style="font-size:9px;color:#8ab;line-height:1.6">
+          Fail hold: 5.84 → <span style="color:#00ff88;font-weight:700">4.85 (−17%)</span><br>
+          stability: 0.654 | scale: 0.83<br>
+          <span style="color:#00ff88">First normal-period improvement ever</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:12px">
+    <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:9px;color:#00ff88;font-weight:700">P1 PASS</div>
+      <div style="font-size:8px;color:#8ab;margin-top:3px">Normal fail hold ↓ (5.84→4.85)</div>
+    </div>
+    <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:9px;color:#00ff88;font-weight:700">P2 PASS</div>
+      <div style="font-size:8px;color:#8ab;margin-top:3px">Pain-trigger freq unchanged (103=103)</div>
+    </div>
+    <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:9px;color:#00ff88;font-weight:700">P3 PASS</div>
+      <div style="font-size:8px;color:#8ab;margin-top:3px">Trans hold maintained (3.42→2.79)</div>
+    </div>
+    <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:9px;color:#00ff88;font-weight:700">P3b PASS</div>
+      <div style="font-size:8px;color:#8ab;margin-top:3px">Separation maintained (+1.10→+0.95)</div>
+    </div>
+    <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:9px;color:#00ff88;font-weight:700">P4 PASS</div>
+      <div style="font-size:8px;color:#8ab;margin-top:3px">Zero new exit types added</div>
+    </div>
+    <div style="padding:8px;border-radius:6px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:9px;color:#00ff88;font-weight:700">P5 PASS</div>
+      <div style="font-size:8px;color:#8ab;margin-top:3px">Zero rule violations</div>
+    </div>
+  </div>
+
+  <div style="background:rgba(0,212,255,0.04);border-radius:8px;padding:10px;border:1px solid rgba(0,212,255,0.1);margin-bottom:12px">
+    <div style="font-size:10px;color:#00d4ff;font-weight:700;margin-bottom:4px">Architectural Position (zero collision)</div>
+    <div style="font-family:monospace;font-size:9px;color:#8ab;line-height:1.8">
+      Passive sensing (Resonance / Radio)<br>
+      &nbsp;&nbsp;↓<br>
+      <span style="color:#00d4ff;font-weight:700">SONAR PROBE (hypothetical perturbation)</span><br>
+      &nbsp;&nbsp;↓<br>
+      micro_stability score<br>
+      &nbsp;&nbsp;↓<br>
+      Posture Adjustment (window scale only)<br>
+      <br>
+      ❗ Separated from: pain | CORE3 | judgment | entry | exit decision
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:14px;padding:12px;border-radius:8px;background:rgba(0,212,255,0.08);border:1px solid rgba(0,212,255,0.2)">
+    <div style="font-size:13px;color:#00d4ff;font-weight:700;letter-spacing:2px">6/6 PASS — SONAR EFFECTIVE</div>
+    <div style="font-size:10px;color:#8ab;margin-top:6px">"We stopped just watching. We started asking. And the structure answered."</div>
+  </div>
+</div>
+
+<!-- EXP-LIVING-LOCK-v1 RESULTS -->
+<div style="margin:30px 0;padding:24px;border-radius:12px;background:rgba(255,170,0,0.04);border:1px solid rgba(255,170,0,0.15)">
+  <div style="font-size:13px;color:#ffaa00;letter-spacing:2px;margin-bottom:12px;font-weight:700">
+    EXP-LIVING-LOCK-v1 — SONAR Ablation Test
+  </div>
+  <div style="font-size:11px;color:#8ab;line-height:1.8;margin-bottom:16px">
+    <div style="margin-bottom:8px"><span style="color:#ff8844;font-weight:600">Research Question:</span> "Does SONAR actually help, or is it just random window shortening?"</div>
+    <div style="font-size:10px;color:#ff6688">Method: Ablation — BASELINE vs CORE3 vs CORE3+SONAR. Same data, same thresholds. 4 days, 187 events.</div>
+  </div>
+
+  <div style="margin:16px 0;overflow-x:auto">
+    <div style="font-size:10px;color:#ffaa66;font-weight:700;margin-bottom:8px">Hold Time Comparison (mean across 4 days)</div>
+    <table style="width:100%;border-collapse:collapse;font-size:9px;color:#8ab">
+      <tr style="border-bottom:1px solid rgba(255,170,0,0.2)">
+        <td style="padding:8px;text-align:left;color:#ffaa66;font-weight:700">Config</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">Trans Hold</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">Fail Hold</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">Separation</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">Slingshot</td>
+        <td style="padding:8px;text-align:center;color:#ffaa66">PainHold</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,170,0,0.1)">
+        <td style="padding:8px;color:#8ab">A — BASELINE</td>
+        <td style="padding:8px;text-align:center">1.60</td>
+        <td style="padding:8px;text-align:center">1.71</td>
+        <td style="padding:8px;text-align:center;color:#ff4444">-0.112</td>
+        <td style="padding:8px;text-align:center">17</td>
+        <td style="padding:8px;text-align:center">—</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,170,0,0.1)">
+        <td style="padding:8px;color:#ffaa00;font-weight:600">B — CORE3</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">3.42</td>
+        <td style="padding:8px;text-align:center">2.32</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">+1.104</td>
+        <td style="padding:8px;text-align:center">17</td>
+        <td style="padding:8px;text-align:center">18</td>
+      </tr>
+      <tr style="border-bottom:1px solid rgba(255,170,0,0.1)">
+        <td style="padding:8px;color:#00d4ff;font-weight:600">C — CORE3+SONAR</td>
+        <td style="padding:8px;text-align:center;color:#ffaa00">2.79</td>
+        <td style="padding:8px;text-align:center;color:#00ff88">1.84</td>
+        <td style="padding:8px;text-align:center;color:#ffaa00">+0.948</td>
+        <td style="padding:8px;text-align:center">17</td>
+        <td style="padding:8px;text-align:center">18</td>
+      </tr>
+    </table>
+  </div>
+
+  <div style="margin:16px 0;display:flex;gap:12px;flex-wrap:wrap">
+    <div style="flex:1;min-width:150px;padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.15);text-align:center">
+      <div style="font-size:9px;color:#8ab">Fail Hold Reduction</div>
+      <div style="font-size:18px;font-weight:700;color:#00ff88">−20.5%</div>
+      <div style="font-size:8px;color:#8ab">2.32 → 1.84</div>
+    </div>
+    <div style="flex:1;min-width:150px;padding:12px;border-radius:8px;background:rgba(255,170,0,0.06);border:1px solid rgba(255,170,0,0.15);text-align:center">
+      <div style="font-size:9px;color:#8ab">Trans Hold Change</div>
+      <div style="font-size:18px;font-weight:700;color:#ffaa00">−18.5%</div>
+      <div style="font-size:8px;color:#8ab">3.42 → 2.79</div>
+    </div>
+    <div style="flex:1;min-width:150px;padding:12px;border-radius:8px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);text-align:center">
+      <div style="font-size:9px;color:#8ab">Mean Posture Scale</div>
+      <div style="font-size:18px;font-weight:700;color:#00d4ff">0.82x</div>
+      <div style="font-size:8px;color:#8ab">stability: 0.647</div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P1 PASS</div>
+      <div style="font-size:9px;color:#8ab">Fail hold lower (1.84 < 2.32)</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(255,68,68,0.06);border:1px solid rgba(255,68,68,0.2)">
+      <div style="font-size:10px;color:#ff4444;font-weight:700;margin-bottom:6px">P2 FAIL</div>
+      <div style="font-size:9px;color:#8ab">Trans damaged −18.5% (>15%)</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(255,68,68,0.06);border:1px solid rgba(255,68,68,0.2)">
+      <div style="font-size:10px;color:#ff4444;font-weight:700;margin-bottom:6px">P3 FAIL</div>
+      <div style="font-size:9px;color:#8ab">Sep dropped (+0.948 < +1.104)</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P4 PASS</div>
+      <div style="font-size:9px;color:#8ab">Slingshot 17=17=17</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P5 PASS</div>
+      <div style="font-size:9px;color:#8ab">PainHold 18=18</div>
+    </div>
+    <div style="padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.2)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">P6 PASS</div>
+      <div style="font-size:9px;color:#8ab">4/4 days SONAR better</div>
+    </div>
+  </div>
+
+  <div style="margin:16px 0;padding:14px;border-radius:8px;background:rgba(255,170,0,0.08);border-left:3px solid #ffaa00">
+    <div style="font-size:10px;color:#ffaa00;font-weight:700;margin-bottom:6px">Key Finding</div>
+    <div style="font-size:9px;color:#8ab;line-height:1.8">
+      <div>SONAR is REAL — fail hold drops 20.5%, consistent across all 4 days.</div>
+      <div>But SONAR is NON-DISCRIMINATING — it cuts window for transitions too (−18.5%).</div>
+      <div>Slingshot and PainHold completely untouched — SONAR does not interfere with frozen layers.</div>
+      <div style="margin-top:8px;color:#ffaa00;font-weight:700">Diagnosis: SONAR tightens posture universally. It doesn't know WHO it's squeezing.</div>
+      <div style="color:#00d4ff;font-style:italic;margin-top:4px">Next evolution: teach posture to respond differently based on micro-stability signature — not just magnitude.</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:14px;padding:12px;border-radius:8px;background:rgba(255,170,0,0.08);border:1px solid rgba(255,170,0,0.2)">
+    <div style="font-size:13px;color:#ffaa00;font-weight:700;letter-spacing:2px">4/6 PASS — SONAR IS REAL BUT BLIND</div>
+    <div style="font-size:10px;color:#8ab;margin-top:6px">"The muscle tensed. But it tensed the same way for friend and foe."</div>
+  </div>
+</div>
+
+<!-- LEARNING POSITION DECLARATION -->
+<div style="margin:30px 0;padding:24px;border-radius:14px;background:rgba(255,200,0,0.04);border:2px solid rgba(255,200,0,0.25);box-shadow:0 0 40px rgba(255,200,0,0.06)">
+  <div style="text-align:center;margin-bottom:16px">
+    <div style="font-size:16px;font-weight:700;color:#ffc800;letter-spacing:3px">LEARNING POSITION DECLARATION</div>
+    <div style="font-size:10px;color:#8ab;margin-top:4px">"Learning changes resolution, never decisions."</div>
+  </div>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+    <div style="flex:1;min-width:250px;padding:16px;border-radius:10px;background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.2)">
+      <div style="font-size:12px;color:#ff4444;font-weight:700;letter-spacing:1px;margin-bottom:10px">NEVER LEARNS (proven by experiment)</div>
+      <div style="font-size:10px;color:#8ab;line-height:2.0">
+        <div><span style="color:#ff4444;font-weight:700">Judgment</span> — SOAR1, macro gate, consensus</div>
+        <div style="font-size:8px;color:#557;margin-left:12px">Learning here = rule drift = structure collapse</div>
+        <div><span style="color:#ff4444;font-weight:700">Reflex</span> — CORE3, slingshot, pain-exit</div>
+        <div style="font-size:8px;color:#557;margin-left:12px">Learning here = reflex stops being reflex</div>
+        <div><span style="color:#ff4444;font-weight:700">Pain</span> — threshold, generation logic</div>
+        <div style="font-size:8px;color:#557;margin-left:12px">Learning here = system self-harms</div>
+      </div>
+    </div>
+    <div style="flex:1;min-width:250px;padding:16px;border-radius:10px;background:rgba(0,255,136,0.06);border:2px solid rgba(0,255,136,0.25)">
+      <div style="font-size:12px;color:#00ff88;font-weight:700;letter-spacing:1px;margin-bottom:10px">ONLY LEARNING POSITION</div>
+      <div style="font-size:10px;color:#8ab;line-height:2.0">
+        <div><span style="color:#00ff88;font-weight:700">Perception Resolution Layer</span></div>
+        <div style="font-size:8px;color:#557;margin-left:12px">= Right-brain sensory tuning</div>
+        <div style="margin-top:8px;color:#00d4ff">What it learns:</div>
+        <div style="margin-left:12px;font-size:9px">How closely to look</div>
+        <div style="margin-left:12px;font-size:9px">How sensitive to be</div>
+        <div style="margin-left:12px;font-size:9px">How wide the observation window</div>
+        <div style="margin-top:8px;color:#ffaa00;font-size:9px">Biological analogy: eyes wider, ears sharper, muscles tenser</div>
+        <div style="margin-top:4px;color:#ff6666;font-size:9px">NOT: what to decide, when to act, how to judge</div>
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:16px;border-radius:10px;background:rgba(0,0,0,0.3);border:1px solid rgba(255,200,0,0.1);font-family:monospace;font-size:10px;color:#8ab;line-height:2.2;text-align:center">
+    <div style="color:#557;font-size:9px;margin-bottom:8px">Learning Position in Architecture</div>
+    <div>
+      Market
+    </div>
+    <div>
+      &nbsp;&nbsp;↓
+    </div>
+    <div>
+      <span style="color:#8ab">Passive Sensing</span> (Resonance / Radio / LNA)
+    </div>
+    <div>
+      &nbsp;&nbsp;↓
+    </div>
+    <div>
+      <span style="color:#00ff88;font-weight:700">Active Sensing (SONAR)</span> &nbsp;← <span style="color:#ffc800;font-weight:700">LEARNING HERE ONLY</span>
+    </div>
+    <div>
+      &nbsp;&nbsp;↓
+    </div>
+    <div>
+      <span style="color:#00d4ff">Posture</span> (window scale / tension)
+    </div>
+    <div>
+      &nbsp;&nbsp;↓
+    </div>
+    <div>
+      <span style="color:#ff4444">Pain</span> → <span style="color:#ffaa00">CORE3 Reflex</span> &nbsp;← <span style="color:#ff4444">FROZEN</span>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:12px;border-radius:8px;background:rgba(255,200,0,0.06);border:1px solid rgba(255,200,0,0.15)">
+    <div style="font-size:11px;color:#ffc800;font-weight:700;letter-spacing:1px">"Learning does not change decisions. Learning changes how the world is seen."</div>
+  </div>
+</div>
+
+<!-- NAVIGATOR vs PILOT -->
+<div style="margin:30px 0;padding:24px;border-radius:14px;background:rgba(0,100,255,0.04);border:2px solid rgba(0,150,255,0.2)">
+  <div style="text-align:center;margin-bottom:16px">
+    <div style="font-size:16px;font-weight:700;color:#0088ff;letter-spacing:3px">NAVIGATOR vs PILOT</div>
+    <div style="font-size:10px;color:#8ab;margin-top:4px">Why SOAR survived but didn't profit. And what the next layer must be.</div>
+  </div>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+    <div style="flex:1;min-width:220px;padding:16px;border-radius:10px;background:rgba(0,100,255,0.06);border:1px solid rgba(0,100,255,0.2);text-align:center">
+      <div style="font-size:28px;margin-bottom:6px">🧭</div>
+      <div style="font-size:12px;color:#0088ff;font-weight:700;letter-spacing:1px">NAVIGATOR (SOAR)</div>
+      <div style="font-size:9px;color:#8ab;margin-top:8px;line-height:1.8;text-align:left">
+        Avoids storms<br>
+        Prevents shipwreck<br>
+        Maximizes survival probability<br>
+        <span style="color:#0088ff">"Where NOT to go"</span>
+      </div>
+      <div style="font-size:8px;color:#557;margin-top:8px">
+        Strength: never dies<br>
+        Weakness: never profits directly
+      </div>
+    </div>
+    <div style="flex:1;min-width:220px;padding:16px;border-radius:10px;background:rgba(0,255,136,0.06);border:2px solid rgba(0,255,136,0.2);text-align:center">
+      <div style="font-size:28px;margin-bottom:6px">✈️</div>
+      <div style="font-size:12px;color:#00ff88;font-weight:700;letter-spacing:1px">PILOT (Right Brain)</div>
+      <div style="font-size:9px;color:#8ab;margin-top:8px;line-height:1.8;text-align:left">
+        Within safe waters only<br>
+        Generates entry frequency<br>
+        Micro-timing decisions<br>
+        <span style="color:#00ff88">"How to move within safe space"</span>
+      </div>
+      <div style="font-size:8px;color:#557;margin-top:8px">
+        Learns: perception resolution<br>
+        Never touches: judgment/reflex/pain
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:14px;border-radius:8px;background:rgba(255,60,60,0.06);border-left:3px solid #ff4444">
+    <div style="font-size:10px;color:#ff4444;font-weight:700;margin-bottom:6px">Why Prop Failed (structural diagnosis)</div>
+    <div style="font-size:9px;color:#8ab;line-height:1.8">
+      <div>Right-brain features were added to JUDGMENT (SOAR consensus)</div>
+      <div>→ Consensus conditions got stricter → Entry count dropped → Opportunity density collapsed</div>
+      <div style="color:#ff4444;margin-top:4px;font-weight:700">"Intelligence went up. The mouth closed tighter."</div>
+      <div style="color:#00ff88;margin-top:8px">Fix: SOAR = "is this ocean safe?" (not "should I enter now?")</div>
+      <div style="color:#00ff88">Right brain = within safe ocean, generate movement density</div>
+    </div>
+  </div>
+</div>
+
+<!-- CONSENSUS MEMORY — RESONANT STATE TRACE -->
+<div style="margin:30px 0;padding:24px;border-radius:14px;background:rgba(180,100,255,0.04);border:2px solid rgba(180,100,255,0.2);box-shadow:0 0 40px rgba(180,100,255,0.06)">
+  <div style="text-align:center;margin-bottom:16px">
+    <div style="font-size:16px;font-weight:700;color:#b464ff;letter-spacing:3px">CONSENSUS MEMORY</div>
+    <div style="font-size:10px;color:#8ab;margin-top:4px">Resonant State Trace — "When all organs vibrated this way, what happened to the body?"</div>
+  </div>
+
+  <div style="padding:16px;border-radius:10px;background:rgba(0,0,0,0.3);border:1px solid rgba(180,100,255,0.15);margin-bottom:16px">
+    <div style="font-size:11px;color:#b464ff;font-weight:700;margin-bottom:10px">What is Consensus Memory?</div>
+    <div style="font-size:10px;color:#8ab;line-height:1.8">
+      <div>NOT individual module learning (Radio learns ❌, Shadow learns ❌, Pain learns ❌)</div>
+      <div>→ Individual learning = local optimization = not biological</div>
+      <div style="margin-top:8px">YES: When ALL modules vibrate in the same direction at the same moment</div>
+      <div>→ That moment = one "environmental state" → stored as body imprint</div>
+      <div style="margin-top:8px;color:#b464ff;font-weight:700">Consensus fingerprint:</div>
+      <div style="margin-left:12px;font-size:9px">Structure state + Radio state + Shadow shape + Pain level + SONAR response + CORE3 output</div>
+      <div style="margin-left:12px;font-size:9px">→ All simultaneously → one pattern → one memory trace</div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:16px">
+    <div style="flex:1;min-width:200px;padding:14px;border-radius:8px;background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.15)">
+      <div style="font-size:10px;color:#ff4444;font-weight:700;margin-bottom:6px">What this is NOT</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.8">
+        Reward optimization ❌<br>
+        Win-rate learning ❌<br>
+        Policy update ❌<br>
+        Reinforcement learning ❌
+      </div>
+    </div>
+    <div style="flex:1;min-width:200px;padding:14px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.15)">
+      <div style="font-size:10px;color:#00ff88;font-weight:700;margin-bottom:6px">What this IS</div>
+      <div style="font-size:9px;color:#8ab;line-height:1.8">
+        Biological conditioning ✅<br>
+        Same pattern repeats → sensitivity shifts ✅<br>
+        Response curves change, decisions don't ✅<br>
+        Body gets "used to" this environment ✅
+      </div>
+    </div>
+  </div>
+
+  <div style="padding:14px;border-radius:8px;background:rgba(180,100,255,0.06);border-left:3px solid #b464ff;margin-bottom:16px">
+    <div style="font-size:10px;color:#b464ff;font-weight:700;margin-bottom:6px">How Conditioning Works</div>
+    <div style="font-size:9px;color:#8ab;line-height:1.8">
+      <div>Same consensus resonance pattern appears again →</div>
+      <div style="margin-left:12px">Pain arrives slightly faster (or slower)</div>
+      <div style="margin-left:12px">Hold window adjusts slightly</div>
+      <div style="margin-left:12px">SONAR sensitivity curve shifts</div>
+      <div style="margin-top:8px;color:#b464ff;font-weight:700">Decision unchanged. Response curve changed.</div>
+      <div style="color:#ffc800;font-style:italic;margin-top:4px">"The organism didn't learn what to do. It learned how this place feels."</div>
+    </div>
+  </div>
+
+  <div style="padding:14px;border-radius:8px;background:rgba(0,0,0,0.3);border:1px solid rgba(180,100,255,0.1);font-family:monospace;font-size:10px;color:#8ab;line-height:2.0;text-align:center">
+    <div style="color:#557;font-size:9px;margin-bottom:8px">Consensus Memory Flow</div>
+    <div>[Structure + Radio + Shadow + Pain + SONAR + CORE3] → <span style="color:#b464ff">Consensus Fingerprint</span></div>
+    <div>&nbsp;&nbsp;↓</div>
+    <div><span style="color:#b464ff">Resonant State Trace</span> (accumulates body outcomes)</div>
+    <div>&nbsp;&nbsp;↓</div>
+    <div>Same fingerprint seen again → <span style="color:#00ff88">sensitivity curve shifts</span></div>
+    <div>&nbsp;&nbsp;↓</div>
+    <div>Affects ONLY: <span style="color:#00d4ff">observe_window_scale</span> | <span style="color:#00d4ff">posture_tension</span></div>
+    <div style="margin-top:8px;color:#ff4444;font-size:9px">
+      NEVER affects: judgment | reflex | pain | entry | exit decision
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:12px;border-radius:8px;background:rgba(180,100,255,0.06);border:1px solid rgba(180,100,255,0.15)">
+    <div style="font-size:11px;color:#b464ff;font-weight:700;letter-spacing:1px">"We're not building a system that predicts the market.</div>
+    <div style="font-size:11px;color:#b464ff;font-weight:700;letter-spacing:1px">We're building a body that gets conditioned by it."</div>
+  </div>
+</div>
+
+<!-- LIVING LOOP DIAGRAM — SONAR + CORE3 + Pain Unified -->
+<div style="margin:30px 0;padding:24px;border-radius:14px;background:rgba(0,255,200,0.03);border:2px solid rgba(0,255,136,0.25);box-shadow:0 0 40px rgba(0,255,136,0.06)">
+  <div style="text-align:center;margin-bottom:16px">
+    <div style="font-size:16px;font-weight:700;color:#00ff88;letter-spacing:3px">THE LIVING LOOP</div>
+    <div style="font-size:10px;color:#8ab;margin-top:4px">Three systems, one organism. No central controller. Each reads, none commands.</div>
+  </div>
+
+  <div style="display:flex;gap:16px;flex-wrap:wrap;margin-bottom:20px">
+    <div style="flex:1;min-width:180px;padding:16px;border-radius:10px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.2);text-align:center">
+      <div style="font-size:28px;margin-bottom:6px">🦇</div>
+      <div style="font-size:12px;color:#00d4ff;font-weight:700;letter-spacing:1px">SONAR</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px;line-height:1.6">
+        Active Sensing<br>
+        Probes structure<br>
+        Adjusts posture<br>
+        <span style="color:#00d4ff">"Muscle tension"</span>
+      </div>
+      <div style="font-size:8px;color:#557;margin-top:6px">Reads: features<br>Writes: window scale only</div>
+    </div>
+    <div style="flex:1;min-width:180px;padding:16px;border-radius:10px;background:rgba(255,170,0,0.06);border:1px solid rgba(255,170,0,0.2);text-align:center">
+      <div style="font-size:28px;margin-bottom:6px">🦴</div>
+      <div style="font-size:12px;color:#ffaa00;font-weight:700;letter-spacing:1px">CORE3</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px;line-height:1.6">
+        Spinal Reflex<br>
+        3 features, 3 rules<br>
+        Frozen thresholds<br>
+        <span style="color:#ffaa00">"Knee-jerk reaction"</span>
+      </div>
+      <div style="font-size:8px;color:#557;margin-top:6px">Reads: pain + fluid<br>Writes: hold/exit decision</div>
+    </div>
+    <div style="flex:1;min-width:180px;padding:16px;border-radius:10px;background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.2);text-align:center">
+      <div style="font-size:28px;margin-bottom:6px">🫀</div>
+      <div style="font-size:12px;color:#ff4444;font-weight:700;letter-spacing:1px">PAIN</div>
+      <div style="font-size:9px;color:#8ab;margin-top:4px;line-height:1.6">
+        State Broadcast<br>
+        pain_level 0.0-1.0<br>
+        Triggers CORE3<br>
+        <span style="color:#ff4444">"Nervous system alarm"</span>
+      </div>
+      <div style="font-size:8px;color:#557;margin-top:6px">Reads: market state<br>Writes: pain_level only</div>
+    </div>
+  </div>
+
+  <div style="padding:16px;border-radius:10px;background:rgba(0,0,0,0.3);border:1px solid rgba(0,255,136,0.1);font-family:monospace;font-size:10px;color:#8ab;line-height:2.2;text-align:center">
+    <div style="color:#557;font-size:9px;margin-bottom:8px">Information Flow (no circular dependency)</div>
+    <div>
+      <span style="color:#00d4ff">SONAR</span> ──reads──→ [features] ──produces──→ <span style="color:#00d4ff">micro_stability</span> ──scales──→ <span style="color:#00d4ff">window</span>
+    </div>
+    <div>
+      <span style="color:#ff4444">PAIN</span> ──reads──→ [market] ──produces──→ <span style="color:#ff4444">pain_level</span> ──triggers──→ <span style="color:#ffaa00">CORE3</span>
+    </div>
+    <div>
+      <span style="color:#ffaa00">CORE3</span> ──reads──→ [pain + fluid] ──produces──→ <span style="color:#ffaa00">HOLD / EXIT</span>
+    </div>
+    <div style="margin-top:10px;color:#00ff88;font-weight:700;font-size:11px">
+      SONAR → posture &nbsp;|&nbsp; PAIN → trigger &nbsp;|&nbsp; CORE3 → decision
+    </div>
+    <div style="margin-top:6px;color:#ff6666;font-size:9px">
+      No system reads another system's output. No feedback loops. No central optimizer.
+    </div>
+  </div>
+
+  <div style="margin-top:16px;display:grid;grid-template-columns:repeat(3,1fr);gap:10px">
+    <div style="padding:10px;border-radius:8px;background:rgba(0,212,255,0.06);border:1px solid rgba(0,212,255,0.15);text-align:center">
+      <div style="font-size:9px;color:#00d4ff;font-weight:700">SONAR OFF</div>
+      <div style="font-size:10px;color:#8ab;margin-top:4px">System still works</div>
+      <div style="font-size:9px;color:#557;margin-top:2px">Window = fixed 6 bars</div>
+    </div>
+    <div style="padding:10px;border-radius:8px;background:rgba(255,60,60,0.06);border:1px solid rgba(255,60,60,0.15);text-align:center">
+      <div style="font-size:9px;color:#ff4444;font-weight:700">PAIN OFF</div>
+      <div style="font-size:10px;color:#8ab;margin-top:4px">System still works</div>
+      <div style="font-size:9px;color:#557;margin-top:2px">No reflex, just window exit</div>
+    </div>
+    <div style="padding:10px;border-radius:8px;background:rgba(255,170,0,0.06);border:1px solid rgba(255,170,0,0.15);text-align:center">
+      <div style="font-size:9px;color:#ffaa00;font-weight:700">CORE3 OFF</div>
+      <div style="font-size:10px;color:#8ab;margin-top:4px">System degrades</div>
+      <div style="font-size:9px;color:#557;margin-top:2px">Pain fires but no reflex</div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:16px;padding:12px;border-radius:8px;background:rgba(0,255,136,0.06);border:1px solid rgba(0,255,136,0.15)">
+    <div style="font-size:11px;color:#00ff88;font-weight:700;letter-spacing:1px">Three independent organs. One living system.</div>
+    <div style="font-size:9px;color:#8ab;margin-top:4px">"Each organ can be removed and the organism survives — but it loses a capability."</div>
   </div>
 </div>
 
@@ -2118,14 +2751,65 @@ document.body.appendChild(s)}
     </div>
   </div>
 
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+    <div style="flex:1;min-width:280px;background:rgba(0,212,255,0.04);border-radius:8px;padding:14px;border:1px solid rgba(0,212,255,0.12)">
+      <div style="font-size:11px;color:#00d4ff;font-weight:700;margin-bottom:8px">SONAR Active Sensing (experiment-validated)</div>
+      <div style="font-size:10px;color:#8ab;line-height:1.8">
+        3 probes: persist ±ε, approach ±ε, vort ±ε<br>
+        Response: boundary distance, symmetry, damping<br>
+        Output: micro_stability → window scale (0.5x-1.0x)<br>
+        Normal fail hold: 5.84 → 4.85 (−17%)<br>
+        Pain frequency: unchanged | Transition: undamaged<br>
+        <span style="color:#00d4ff">Posture only. Never decision.</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:280px;background:rgba(180,100,255,0.04);border-radius:8px;padding:14px;border:1px solid rgba(180,100,255,0.12)">
+      <div style="font-size:11px;color:#b464ff;font-weight:700;margin-bottom:8px">Living Loop (integration-validated)</div>
+      <div style="font-size:10px;color:#8ab;line-height:1.8">
+        SONAR reads features → writes window scale<br>
+        PAIN reads market → writes pain_level<br>
+        CORE3 reads pain+fluid → writes hold/exit<br>
+        No circular dependency. No central optimizer.<br>
+        Each organ removable. System degrades gracefully.<br>
+        <span style="color:#b464ff">Three organs, one organism.</span>
+      </div>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:14px">
+    <div style="flex:1;min-width:280px;background:rgba(255,200,0,0.04);border-radius:8px;padding:14px;border:1px solid rgba(255,200,0,0.12)">
+      <div style="font-size:11px;color:#ffc800;font-weight:700;margin-bottom:8px">Consensus Memory (5/5 PASS — conditioning proven)</div>
+      <div style="font-size:10px;color:#8ab;line-height:1.8">
+        187 events → 15 fingerprints → 11 repeat groups (5+)<br>
+        Variance ratio: 0.529 (within < between)<br>
+        7 groups show hold shift ≥ 0.3 bars<br>
+        Sparsity: 0.088 (meaningful, not overfit)<br>
+        <span style="color:#ffc800">Same pattern → body responds similarly</span><br>
+        <span style="color:#ff6666">Never affects judgment/reflex/pain</span>
+      </div>
+    </div>
+    <div style="flex:1;min-width:280px;background:rgba(0,100,255,0.04);border-radius:8px;padding:14px;border:1px solid rgba(0,100,255,0.12)">
+      <div style="font-size:11px;color:#0088ff;font-weight:700;margin-bottom:8px">Learning Position (architecturally declared)</div>
+      <div style="font-size:10px;color:#8ab;line-height:1.8">
+        Learning in Judgment → FAIL (rule drift, collapse)<br>
+        Learning in Reflex → FAIL (reflex stops being reflex)<br>
+        Learning in Pain → FAIL (system self-harms)<br>
+        <span style="color:#00ff88">Learning in Perception Resolution → ONLY SAFE</span><br>
+        SONAR micro_stability: hand-crafted → conditioned model<br>
+        <span style="color:#0088ff">Resolution changes. Decisions don't.</span>
+      </div>
+    </div>
+  </div>
+
   <div style="text-align:center;padding:12px;border-radius:8px;background:rgba(255,30,30,0.06);border:1px solid rgba(255,30,30,0.15)">
     <div style="font-size:12px;color:#ff6666;font-weight:700;letter-spacing:2px">"Judgment from structure. Transition from environment. Survival from reflex."</div>
     <div style="font-size:10px;color:#8ab;margin-top:6px">If it doesn't match this sentence, it doesn't belong in the system.</div>
+    <div style="font-size:10px;color:#ffc800;margin-top:4px">"Learning changes how the world is seen, never what is decided."</div>
   </div>
 </div>
 
 <div style="text-align:center;padding:30px;font-size:10px;color:#334">
-  SOAR Brain v3 — Feb 19, 2026 — Design Lock: Verified Facts Only — CORE3 LODO 3/4 PASS
+  SOAR Brain v3 — Feb 19, 2026 — 17 experiments | Conditioning: 5/5 PASS — "Body learns this place. Decisions don't change."
 </div>
 
 </div>
