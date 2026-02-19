@@ -1,70 +1,79 @@
 # SPS — Structural Projection Surface
 
-> This repository is not documentation.  
-> It is a **live structural surface** for observing SOAR growth.
+This repository is **not documentation**  
+and **not an implementation**.
+
+It is a **structural projection surface** used to
+observe, anchor, and verify the evolution of SOAR-based systems.
 
 ---
 
 ## ▶ View the Surface
 
-- **Live Page (GitHub Pages)**  
-> ⏳ If this shows 404, deployment may still be in progress.
-
+### Live Page (GitHub Pages)
 🔗 https://ilgu26-wq.github.io/sps-structural-view/
 
----
+> If this shows a 404, GitHub Pages deployment may still be in progress.
 
-- **Direct HTML (always works)**  
-🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index.html
+### Direct HTML (always works)
+- index (baseline):  
+  🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index.html  
+- index2 (current / extended):  
+  🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index2.html  
 
-> Click **“View raw”** to open the exact HTML file.
+> Click **“View raw”** to open the exact HTML surface.
 
 ---
 
 ## What This Repository Is
 
-This repository exists to **project and display the structure of a growing SOAR system**.
+This repository exists to **project and display structural state**, not behavior.
 
-- No execution
-- No training
-- No optimization
+- ❌ No execution
+- ❌ No training
+- ❌ No optimization
+- ❌ No parameter tuning
 
-The HTML surface is authoritative.  
-This repository only anchors and serves it.
+The HTML files are the **authoritative artifacts**.  
+The repository exists only to anchor, version, and publish them.
 
 ---
 
 ## Reference Core vs Growing Core (Important)
 
-To make growth **observable**, this surface includes:
+To make growth **observable and falsifiable**, this surface explicitly separates:
 
-- **SOAR1** — a sealed, invariant reference core  
-- **Growing SOAR** — the actual evolving architecture under study
+- **SOAR1**  
+  A sealed, invariant reference core  
+  (used only as a coordinate system)
 
-SOAR1 exists **only as a baseline coordinate**, not as the subject.
+- **Growing SOAR**  
+  The evolving architecture under study
 
-Growth is defined **relative to a fixed reference**.  
-This surface provides that reference.
+SOAR1 is **not the subject** of improvement.  
+Growth is defined **relative to a fixed reference**, not by self-modification.
+
+This surface exists to preserve that reference.
 
 ---
 
 ## Structural Evidence — Observation VETO Test
 
-The following experiment was conducted to test whether
-micro-structure / planetary observation,
-when **lossily transformed into a VETO-only signal**,
-can improve SOAR1 execution quality.
+This repository includes a single canonical experiment,
+used to test whether **observation-only blocking**
+improves execution quality when applied to a sealed core.
 
 ### Experiment
 **EXP-VETO-MICRO-01**
 
 - Core: **SOAR1 (fixed, sealed)**
-- EXIT: **EXEC-B (fixed)**
-- Variable: observation-based **BLOCK only** (no EXECUTE creation)
+- Exit profile: **EXEC-B (fixed)**
+- Variable: observation-based **BLOCK only**
+  - No new EXECUTE signals introduced
 - Data: identical historical runs
 
 ### Verdict
-**H0 RETAINED — Observation VETO is NOT beneficial for SOAR1**
+**H0 RETAINED — Observation VETO does NOT improve SOAR1**
 
 ### Results
 
@@ -94,11 +103,26 @@ despite marginal improvements in WR / RR / Expectancy.
 > Adding a belt only slows it down.**
 
 For SOAR1-level entry quality (~90% WR),
-observation-based VETO removes more valid alpha
+observation-based VETO removes more valid structure
 than it prevents losses.
 
 ### Artifacts
 
-Evidence image:  
-
 ![EXP-VETO-MICRO-01 — Observation VETO Result](sps_veto_summary.png)
+
+---
+
+## Scope Boundary (Read This First)
+
+This repository answers **one question only**:
+
+> *“What does the structure look like, and how does it change?”*
+
+It does **not** attempt to:
+- justify profitability
+- optimize decisions
+- explain behavior post-hoc
+
+Those belong elsewhere.
+
+This surface exists to keep structure **visible, stable, and auditable**.
