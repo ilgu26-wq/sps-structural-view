@@ -2,261 +2,448 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SOAR Organization Chart</title>
+<meta name="viewport" content="width=1200, height=675">
+<title>SOAR — Living Neural Organism</title>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;600;700&family=Inter:wght@300;400;500;700&display=swap');
-*{margin:0;padding:0;box-sizing:border-box}
-body{background:#020810;font-family:'Inter','JetBrains Mono',sans-serif;color:#c8d6e5;min-height:100vh;overflow-x:hidden}
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500&display=swap');
 
-.bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;
-  background:radial-gradient(ellipse at 25% 15%,#0a1835 0%,transparent 50%),
-             radial-gradient(ellipse at 75% 85%,#0f0a20 0%,transparent 50%),
-             #020810}
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
-.container{position:relative;z-index:1;max-width:1200px;margin:0 auto;padding:40px 20px 80px}
+body {
+  width: 1200px;
+  height: 675px;
+  background: #0a0a0f;
+  overflow: hidden;
+  font-family: 'Inter', sans-serif;
+  position: relative;
+}
 
-.header{text-align:center;margin-bottom:16px}
-.header h1{font-family:'JetBrains Mono',monospace;font-size:26px;letter-spacing:8px;color:#00d4ff;
-  text-shadow:0 0 40px rgba(0,212,255,0.25)}
-.header h2{font-size:12px;color:#556b80;letter-spacing:4px;font-weight:300;margin-top:6px;
-  font-family:'JetBrains Mono',monospace}
+canvas#bgCanvas {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  z-index: 0;
+}
 
-.principles{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin:24px 0 40px;padding:0 10px}
-.principle{font-size:10px;color:#ff8866;border:1px solid rgba(255,136,102,0.25);padding:5px 14px;
-  border-radius:20px;background:rgba(255,136,102,0.04);font-family:'JetBrains Mono',monospace;letter-spacing:0.5px}
+.main-container {
+  position: relative;
+  z-index: 1;
+  width: 1200px;
+  height: 675px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
 
-.connector-line{display:flex;justify-content:center;margin:0;padding:0;height:32px;position:relative}
-.connector-line::after{content:'';position:absolute;left:50%;width:2px;height:100%;
-  background:linear-gradient(180deg,rgba(0,212,255,0.4),rgba(0,212,255,0.1))}
-.connector-line.wide::after{width:0}
-.connector-line .arrow{position:absolute;bottom:-2px;left:50%;transform:translateX(-50%);
-  color:rgba(0,212,255,0.5);font-size:10px;z-index:2}
+.top-bar {
+  width: 100%;
+  padding: 18px 40px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
-.dept{border-radius:16px;padding:24px 28px;margin:0 auto;position:relative;transition:all 0.3s}
-.dept:hover{transform:translateY(-2px)}
+.logo {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(255,255,255,0.35);
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
 
-.dept-name{font-size:15px;font-weight:700;letter-spacing:2px;margin-bottom:4px;
-  font-family:'JetBrains Mono',monospace}
-.dept-sub{font-size:12px;font-weight:500;opacity:0.7;margin-bottom:10px}
-.dept-role{font-size:11px;font-weight:300;line-height:1.7;opacity:0.85}
-.dept-auth{font-size:10px;margin-top:10px;padding:6px 12px;border-radius:8px;display:inline-block;
-  font-family:'JetBrains Mono',monospace;letter-spacing:0.5px}
+.tagline-top {
+  font-size: 11px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.2);
+  letter-spacing: 2px;
+  font-family: 'JetBrains Mono', monospace;
+}
 
-.core{background:linear-gradient(135deg,rgba(255,0,80,0.12),rgba(255,80,0,0.08));
-  border:2px solid rgba(255,0,80,0.5);max-width:600px;text-align:center;
-  box-shadow:0 0 40px rgba(255,0,80,0.08)}
-.core .dept-name{color:#ff3366}
-.core .dept-auth{background:rgba(255,0,80,0.1);color:#ff6688;border:1px solid rgba(255,0,80,0.3)}
-.core .seal{position:absolute;top:12px;right:16px;font-size:9px;color:#ff3366;opacity:0.6;
-  border:1px solid rgba(255,0,80,0.3);padding:2px 8px;border-radius:4px}
+svg.diagram {
+  margin-top: -5px;
+}
 
-.branch-row{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:0}
-@media(max-width:900px){.branch-row{grid-template-columns:1fr}}
+.glow-cyan { filter: drop-shadow(0 0 6px rgba(0, 229, 255, 0.5)); }
+.glow-magenta { filter: drop-shadow(0 0 6px rgba(255, 0, 200, 0.4)); }
+.glow-gold { filter: drop-shadow(0 0 6px rgba(255, 200, 50, 0.5)); }
+.glow-green { filter: drop-shadow(0 0 6px rgba(0, 255, 136, 0.4)); }
 
-.branch{border-radius:16px;padding:20px;position:relative}
-.branch-title{font-size:13px;font-weight:700;letter-spacing:3px;margin-bottom:16px;padding-bottom:8px;
-  border-bottom:1px solid rgba(255,255,255,0.08);font-family:'JetBrains Mono',monospace}
-.branch-trait{font-size:10px;font-weight:300;margin-top:4px;opacity:0.6;font-style:italic}
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50% { opacity: 1; }
+}
+@keyframes pulse-slow {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 0.7; }
+}
+@keyframes dash-flow {
+  to { stroke-dashoffset: -20; }
+}
+@keyframes dash-flow-up {
+  to { stroke-dashoffset: 20; }
+}
+@keyframes orbit-pulse {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.4; }
+}
+@keyframes breathe {
+  0%, 100% { r: 3; opacity: 0.5; }
+  50% { r: 5; opacity: 1; }
+}
+@keyframes float-particle {
+  0% { opacity: 0; transform: translateY(0); }
+  20% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-30px); }
+}
 
-.unit{padding:14px 18px;border-radius:10px;margin:8px 0;border:1px solid;transition:all 0.25s}
-.unit:hover{transform:translateX(3px)}
-.unit-name{font-size:12px;font-weight:600;letter-spacing:1px;font-family:'JetBrains Mono',monospace}
-.unit-role{font-size:10px;font-weight:300;margin-top:4px;opacity:0.8;line-height:1.5}
-.unit-no{font-size:9px;margin-top:6px;opacity:0.5;font-family:'JetBrains Mono',monospace}
+.flow-line {
+  stroke-dasharray: 6 4;
+  animation: dash-flow 1.2s linear infinite;
+}
+.flow-line-up {
+  stroke-dasharray: 6 4;
+  animation: dash-flow-up 1.5s linear infinite;
+}
+.pulse-node {
+  animation: pulse 2.5s ease-in-out infinite;
+}
+.pulse-slow {
+  animation: pulse-slow 3.5s ease-in-out infinite;
+}
+.breathe-node {
+  animation: breathe 3s ease-in-out infinite;
+}
+.orbit-ring {
+  animation: orbit-pulse 4s ease-in-out infinite;
+}
 
-.left-branch{background:rgba(0,150,255,0.05);border:1px solid rgba(0,150,255,0.15)}
-.left-branch .branch-title{color:#00aaff}
-.left-branch .unit{border-color:rgba(0,150,255,0.15);background:rgba(0,150,255,0.04)}
-.left-branch .unit-name{color:#66ccff}
+.bottom-quote {
+  position: absolute;
+  bottom: 20px;
+  left: 0; right: 0;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.25);
+  letter-spacing: 3px;
+  font-family: 'JetBrains Mono', monospace;
+}
 
-.right-branch{background:rgba(180,80,255,0.05);border:1px solid rgba(180,80,255,0.15)}
-.right-branch .branch-title{color:#bb77ff}
-.right-branch .unit{border-color:rgba(180,80,255,0.15);background:rgba(180,80,255,0.04)}
-.right-branch .unit-name{color:#cc99ff}
+.bottom-quote span {
+  color: rgba(0, 229, 255, 0.5);
+}
 
-.bottom-row{display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;margin-top:20px}
-@media(max-width:900px){.bottom-row{grid-template-columns:1fr}}
-
-.support{border-radius:14px;padding:18px 20px;text-align:center}
-.support .dept-name{font-size:12px}
-.support .dept-role{font-size:10px}
-
-.memory-dept{background:rgba(255,200,0,0.05);border:1px solid rgba(255,200,0,0.2)}
-.memory-dept .dept-name{color:#ffcc44}
-.memory-dept .dept-auth{background:rgba(255,200,0,0.08);color:#ffdd66;border:1px solid rgba(255,200,0,0.2)}
-
-.ops-dept{background:rgba(0,255,150,0.05);border:1px solid rgba(0,255,150,0.15)}
-.ops-dept .dept-name{color:#44ffaa}
-.ops-dept .dept-auth{background:rgba(0,255,150,0.06);color:#66ffbb;border:1px solid rgba(0,255,150,0.2)}
-
-.ext-dept{background:rgba(100,100,120,0.08);border:1px solid rgba(100,100,120,0.2)}
-.ext-dept .dept-name{color:#8899aa}
-.ext-dept .dept-auth{background:rgba(100,100,120,0.08);color:#99aabb;border:1px solid rgba(100,100,120,0.3)}
-
-.summary{margin-top:40px;text-align:center;padding:28px;border-radius:16px;
-  background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.06)}
-.summary-line{font-size:12px;font-weight:400;margin:6px 0;line-height:1.8;letter-spacing:0.5px}
-.summary-line .tag{font-weight:600;margin-right:4px}
-.summary-line .left{color:#66ccff}
-.summary-line .right{color:#cc99ff}
-.summary-line .mem{color:#ffcc44}
-.summary-line .ops{color:#44ffaa}
-.summary-line .core-c{color:#ff5577}
-
-.seal-block{text-align:center;margin-top:32px;padding:20px}
-.seal-block .stamp{font-size:11px;color:#ff4466;letter-spacing:4px;font-weight:700;
-  font-family:'JetBrains Mono',monospace;opacity:0.7}
-.seal-block .check{font-size:10px;color:#445566;margin-top:12px;line-height:1.8}
-
-.flow-label{text-align:center;font-size:9px;color:#445566;letter-spacing:2px;margin:6px 0;
-  font-family:'JetBrains Mono',monospace}
-
-.nav-link{position:fixed;bottom:20px;right:20px;z-index:10;
-  background:rgba(0,212,255,0.1);border:1px solid rgba(0,212,255,0.3);
-  color:#00d4ff;padding:8px 16px;border-radius:8px;text-decoration:none;
-  font-size:10px;font-family:'JetBrains Mono',monospace;letter-spacing:1px;transition:all 0.3s}
-.nav-link:hover{background:rgba(0,212,255,0.2)}
+.watermark {
+  position: absolute;
+  bottom: 20px;
+  right: 40px;
+  font-size: 10px;
+  color: rgba(255,255,255,0.12);
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: 1px;
+}
 </style>
 </head>
 <body>
-<div class="bg"></div>
-<a href="/" class="nav-link">BRAIN 3D</a>
 
-<div class="container">
+<canvas id="bgCanvas"></canvas>
 
-<div class="header">
-  <h1>SOAR</h1>
-  <h2>ORGANIZATION CHART &mdash; FINAL</h2>
-</div>
-
-<div class="principles">
-  <span class="principle">No one decides alone</span>
-  <span class="principle">No one modifies physics</span>
-  <span class="principle">Only results remain; only verified explanations accumulate</span>
-  <span class="principle">All influence is micro, indirect, and bounded</span>
-</div>
-
-<div class="dept core">
-  <span class="seal">SEALED</span>
-  <div class="dept-name">SOAR CORE DIVISION</div>
-  <div class="dept-sub">Supreme Decision Nucleus</div>
-  <div class="dept-role">
-    Sole authority for judgment and execution<br>
-    Receives observations &rarr; EXECUTE / NON-EXECUTE decision<br>
-    External modification &middot; induction &middot; bias completely blocked<br>
-    Execution results propagate asynchronously to all support departments;<br>
-    Core retrieves only the decision outcome
-  </div>
-  <div class="dept-auth">Sole decision-maker &mdash; no department has direct access</div>
-</div>
-
-<div class="connector-line"><span class="arrow">&#9660;</span></div>
-<div class="flow-label">OBSERVATION ONLY</div>
-
-<div class="branch-row">
-
-  <div class="branch left-branch">
-    <div class="branch-title">LEFT BRAIN</div>
-    <div class="branch-trait">Fact &middot; Observation &middot; Research &mdash; shares quickly, never judges importance</div>
-
-    <div class="unit">
-      <div class="unit-name">SONAR RESEARCH (Anti-SOAR)</div>
-      <div class="unit-role">Microstructure &middot; wave observation, hypothesis generation</div>
-      <div class="unit-no">&#10060; No judgment &nbsp; &#10060; No execution</div>
-    </div>
-
-    <div class="unit">
-      <div class="unit-name">SCIENCE DEPT</div>
-      <div class="unit-role">Hypothesis survival/collapse tracking, consensus resonance scoring<br>Environment Signature generation and classification</div>
-      <div class="unit-no">&#10060; No physics influence</div>
-    </div>
-
-    <div class="unit">
-      <div class="unit-name">ARCHIVE</div>
-      <div class="unit-role">Stores all hypothesis &middot; result &middot; explanation history</div>
-      <div class="unit-no">Read-only</div>
-    </div>
-
-    <div class="unit">
-      <div class="unit-name">COURIER</div>
-      <div class="unit-role">Rapid dissemination of verified results</div>
-      <div class="unit-no">&#10060; No judgment &mdash; delivery only</div>
-    </div>
-
-    <div class="unit">
-      <div class="unit-name">CLEANER</div>
-      <div class="unit-role">Removes only failed &middot; duplicate &middot; zero-impact information<br>Cannot generate new information</div>
-      <div class="unit-no">&#10060; No physics access &mdash; silent removal only</div>
-    </div>
+<div class="main-container">
+  <div class="top-bar">
+    <div class="logo">SOAR v3</div>
+    <div class="tagline-top">judgment-free organism</div>
   </div>
 
-  <div class="branch right-branch">
-    <div class="branch-title">RIGHT BRAIN</div>
-    <div class="branch-trait">Evaluation &middot; Persuasion &middot; Verification &mdash; speaks only, no authority</div>
+  <svg class="diagram" width="1200" height="590" viewBox="0 0 1200 590">
+    <defs>
+      <radialGradient id="glow-c" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.3"/>
+        <stop offset="100%" stop-color="#00e5ff" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow-m" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ff00c8" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#ff00c8" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow-g" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#00ff88" stop-opacity="0.2"/>
+        <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="glow-gold" cx="50%" cy="50%" r="50%">
+        <stop offset="0%" stop-color="#ffc832" stop-opacity="0.25"/>
+        <stop offset="100%" stop-color="#ffc832" stop-opacity="0"/>
+      </radialGradient>
+      <linearGradient id="lineGrad" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#00e5ff" stop-opacity="0.6"/>
+        <stop offset="100%" stop-color="#00e5ff" stop-opacity="0.1"/>
+      </linearGradient>
+      <linearGradient id="lineGradM" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0%" stop-color="#ff00c8" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#ff00c8" stop-opacity="0.1"/>
+      </linearGradient>
+      <filter id="blur-sm">
+        <feGaussianBlur stdDeviation="2"/>
+      </filter>
+      <filter id="blur-lg">
+        <feGaussianBlur stdDeviation="8"/>
+      </filter>
+    </defs>
 
-    <div class="unit">
-      <div class="unit-name">INSPECTION OFFICE</div>
-      <div class="unit-role">Result validity determination &mdash; VALID / INVALID</div>
-      <div class="unit-no">&#10060; Cannot suggest direction &mdash; rejection only</div>
-    </div>
+    <!-- ═══ BACKGROUND GLOW FIELDS ═══ -->
+    <circle cx="600" cy="175" r="140" fill="url(#glow-c)" class="pulse-slow"/>
+    <circle cx="600" cy="320" r="160" fill="url(#glow-m)" class="pulse-slow" style="animation-delay: 1s"/>
+    <circle cx="600" cy="460" r="100" fill="url(#glow-g)" class="pulse-slow" style="animation-delay: 2s"/>
 
-    <div class="unit">
-      <div class="unit-name">POLITICAL OFFICE</div>
-      <div class="unit-role">Translates pain &middot; reward trends into language<br>Claims and persuasion (recommendation)<br>No decision authority &mdash; adoption determined indirectly via consensus resonance</div>
-      <div class="unit-no">&#9888; micro-bias &le; 0.003 (hard cap)</div>
-    </div>
-  </div>
+    <!-- ═══ MARKET INPUT ═══ -->
+    <circle cx="600" cy="38" r="22" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="1"/>
+    <circle cx="600" cy="38" r="4" fill="rgba(255,255,255,0.5)" class="breathe-node"/>
+    <text x="600" y="42" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.5)" font-weight="400">MARKET</text>
+    <text x="600" y="52" text-anchor="middle" font-family="Inter" font-size="7" fill="rgba(255,255,255,0.2)">raw signal</text>
 
+    <!-- flow: market → constitution -->
+    <line x1="600" y1="60" x2="600" y2="100" stroke="rgba(255,255,255,0.15)" stroke-width="1" class="flow-line"/>
+
+    <!-- ═══ LAYER 1: CONSTITUTIONAL FIELD (IMMUTABLE) ═══ -->
+    <rect x="340" y="100" width="520" height="130" rx="6" fill="rgba(0, 229, 255, 0.03)" stroke="rgba(0, 229, 255, 0.15)" stroke-width="1"/>
+
+    <!-- constitutional label -->
+    <text x="365" y="122" font-family="JetBrains Mono" font-size="11" fill="rgba(0, 229, 255, 0.7)" font-weight="500" letter-spacing="2">CONSTITUTIONAL FIELD</text>
+    <text x="365" y="136" font-family="Inter" font-size="8" fill="rgba(0, 229, 255, 0.3)">irreversible · no learning · no reward</text>
+
+    <!-- immutable badge -->
+    <rect x="740" y="109" width="100" height="20" rx="10" fill="none" stroke="rgba(0, 229, 255, 0.25)" stroke-width="0.7"/>
+    <text x="790" y="122" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(0, 229, 255, 0.5)">IMMUTABLE</text>
+
+    <!-- constitutional nodes -->
+    <!-- Collective Energy -->
+    <circle cx="430" cy="180" r="20" fill="rgba(0, 229, 255, 0.06)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="0.8" class="pulse-node"/>
+    <circle cx="430" cy="180" r="40" fill="url(#glow-c)" opacity="0.3" filter="url(#blur-lg)"/>
+    <text x="430" y="177" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(0, 229, 255, 0.8)" font-weight="500">CE</text>
+    <text x="430" y="188" text-anchor="middle" font-family="Inter" font-size="6.5" fill="rgba(0, 229, 255, 0.4)">Energy Core</text>
+
+    <!-- RSP -->
+    <circle cx="600" cy="180" r="20" fill="rgba(0, 229, 255, 0.06)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="0.8" class="pulse-node" style="animation-delay: 0.8s"/>
+    <circle cx="600" cy="180" r="40" fill="url(#glow-c)" opacity="0.3" filter="url(#blur-lg)"/>
+    <text x="600" y="177" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(0, 229, 255, 0.8)" font-weight="500">RSP</text>
+    <text x="600" y="188" text-anchor="middle" font-family="Inter" font-size="6.5" fill="rgba(0, 229, 255, 0.4)">Survival Pressure</text>
+
+    <!-- Execution Boundary -->
+    <circle cx="770" cy="180" r="20" fill="rgba(0, 229, 255, 0.06)" stroke="rgba(0, 229, 255, 0.3)" stroke-width="0.8" class="pulse-node" style="animation-delay: 1.6s"/>
+    <circle cx="770" cy="180" r="40" fill="url(#glow-c)" opacity="0.3" filter="url(#blur-lg)"/>
+    <text x="770" y="177" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(0, 229, 255, 0.8)" font-weight="500">EA</text>
+    <text x="770" y="188" text-anchor="middle" font-family="Inter" font-size="6.5" fill="rgba(0, 229, 255, 0.4)">Exec Boundary</text>
+
+    <!-- thin connections between constitutional nodes -->
+    <line x1="450" y1="180" x2="580" y2="180" stroke="rgba(0, 229, 255, 0.1)" stroke-width="0.5" stroke-dasharray="3 3"/>
+    <line x1="620" y1="180" x2="750" y2="180" stroke="rgba(0, 229, 255, 0.1)" stroke-width="0.5" stroke-dasharray="3 3"/>
+
+    <!-- ═══ FLOW: Constitution → Neural Field ═══ -->
+    <line x1="600" y1="230" x2="600" y2="270" stroke="url(#lineGrad)" stroke-width="1.2" class="flow-line"/>
+    <text x="618" y="252" font-family="Inter" font-size="7" fill="rgba(0,229,255,0.3)">sensitivity</text>
+
+    <!-- ═══ LAYER 2: NEURAL FIELD ═══ -->
+    <ellipse cx="600" cy="315" rx="230" ry="55" fill="rgba(255, 0, 200, 0.02)" stroke="rgba(255, 0, 200, 0.2)" stroke-width="1" stroke-dasharray="4 2"/>
+    <ellipse cx="600" cy="315" rx="230" ry="55" fill="none" stroke="rgba(255, 0, 200, 0.07)" stroke-width="30" filter="url(#blur-lg)"/>
+
+    <text x="600" y="285" text-anchor="middle" font-family="JetBrains Mono" font-size="12" fill="rgba(255, 0, 200, 0.7)" font-weight="500" letter-spacing="3">NEURAL FIELD</text>
+    <text x="600" y="297" text-anchor="middle" font-family="Inter" font-size="8" fill="rgba(255, 0, 200, 0.35)">arousal · resonance · hope — sensitivity only, no commands</text>
+
+    <!-- Proposer nodes -->
+    <g class="pulse-node" style="animation-delay: 0.3s">
+      <circle cx="460" cy="330" r="16" fill="rgba(255, 0, 200, 0.06)" stroke="rgba(255, 0, 200, 0.35)" stroke-width="0.8"/>
+      <text x="460" y="328" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(255, 0, 200, 0.8)">py₁</text>
+      <text x="460" y="339" text-anchor="middle" font-family="Inter" font-size="6" fill="rgba(255, 0, 200, 0.4)">momentum</text>
+    </g>
+    <g class="pulse-node" style="animation-delay: 0.9s">
+      <circle cx="600" cy="340" r="16" fill="rgba(255, 0, 200, 0.06)" stroke="rgba(255, 0, 200, 0.35)" stroke-width="0.8"/>
+      <text x="600" y="338" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(255, 0, 200, 0.8)">py₂</text>
+      <text x="600" y="349" text-anchor="middle" font-family="Inter" font-size="6" fill="rgba(255, 0, 200, 0.4)">reversion</text>
+    </g>
+    <g class="pulse-node" style="animation-delay: 1.5s">
+      <circle cx="740" cy="330" r="16" fill="rgba(255, 0, 200, 0.06)" stroke="rgba(255, 0, 200, 0.35)" stroke-width="0.8"/>
+      <text x="740" y="328" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(255, 0, 200, 0.8)">py₃</text>
+      <text x="740" y="339" text-anchor="middle" font-family="Inter" font-size="6" fill="rgba(255, 0, 200, 0.4)">volatility</text>
+    </g>
+
+    <!-- proposer → neural field connections -->
+    <line x1="430" y1="200" x2="460" y2="314" stroke="rgba(255,0,200,0.1)" stroke-width="0.5" class="flow-line"/>
+    <line x1="600" y1="200" x2="600" y2="324" stroke="rgba(255,0,200,0.1)" stroke-width="0.5" class="flow-line"/>
+    <line x1="770" y1="200" x2="740" y2="314" stroke="rgba(255,0,200,0.1)" stroke-width="0.5" class="flow-line"/>
+
+    <!-- ═══ HOPE / RESONANCE ORBIT ═══ -->
+    <ellipse cx="600" cy="330" rx="180" ry="22" fill="none" stroke="rgba(255, 200, 50, 0.15)" stroke-width="0.8" stroke-dasharray="5 3" class="orbit-ring"/>
+    <ellipse cx="600" cy="330" rx="180" ry="22" fill="none" stroke="rgba(255, 200, 50, 0.05)" stroke-width="12" filter="url(#blur-lg)"/>
+
+    <!-- orbit particles -->
+    <circle cx="420" cy="330" r="3" fill="rgba(255, 200, 50, 0.7)" class="breathe-node" style="animation-delay: 0s"/>
+    <circle cx="780" cy="330" r="3" fill="rgba(255, 200, 50, 0.7)" class="breathe-node" style="animation-delay: 1.5s"/>
+    <circle cx="510" cy="318" r="2" fill="rgba(255, 200, 50, 0.5)" class="breathe-node" style="animation-delay: 0.7s"/>
+    <circle cx="690" cy="318" r="2" fill="rgba(255, 200, 50, 0.5)" class="breathe-node" style="animation-delay: 2.2s"/>
+
+    <!-- orbit label -->
+    <text x="832" y="332" font-family="JetBrains Mono" font-size="7.5" fill="rgba(255, 200, 50, 0.5)" font-weight="400">HOPE ORBIT</text>
+    <text x="832" y="342" font-family="Inter" font-size="6" fill="rgba(255, 200, 50, 0.25)">resonance · no direction</text>
+
+    <!-- ═══ CONSENSUS ZONE ═══ -->
+    <line x1="600" y1="370" x2="600" y2="408" stroke="url(#lineGradM)" stroke-width="1.2" class="flow-line"/>
+
+    <!-- consensus diamond -->
+    <polygon points="600,408 630,435 600,462 570,435" fill="rgba(0, 255, 136, 0.04)" stroke="rgba(0, 255, 136, 0.3)" stroke-width="1"/>
+    <circle cx="600" cy="435" r="50" fill="url(#glow-g)" opacity="0.4" filter="url(#blur-lg)"/>
+
+    <!-- 5 ant voters -->
+    <circle cx="570" cy="420" r="4" fill="rgba(0,255,136,0.4)" class="breathe-node" style="animation-delay:0.2s"/>
+    <circle cx="583" cy="410" r="4" fill="rgba(0,255,136,0.4)" class="breathe-node" style="animation-delay:0.6s"/>
+    <circle cx="600" cy="415" r="4" fill="rgba(0,255,136,0.5)" class="breathe-node" style="animation-delay:1.0s"/>
+    <circle cx="617" cy="410" r="4" fill="rgba(0,255,136,0.4)" class="breathe-node" style="animation-delay:1.4s"/>
+    <circle cx="630" cy="420" r="4" fill="rgba(0,255,136,0.4)" class="breathe-node" style="animation-delay:1.8s"/>
+
+    <text x="600" y="440" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="rgba(0, 255, 136, 0.8)" font-weight="500">CONSENSUS</text>
+    <text x="600" y="451" text-anchor="middle" font-family="Inter" font-size="6.5" fill="rgba(0, 255, 136, 0.35)">5 voters · unanimous · no override</text>
+
+    <!-- ═══ EXECUTION ═══ -->
+    <line x1="600" y1="462" x2="600" y2="492" stroke="rgba(0, 255, 136, 0.2)" stroke-width="1.2" class="flow-line"/>
+
+    <rect x="560" y="492" width="80" height="28" rx="14" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.2)" stroke-width="0.8"/>
+    <text x="600" y="509" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,0.6)" font-weight="400">REFLEX</text>
+
+    <text x="600" y="535" text-anchor="middle" font-family="Inter" font-size="7" fill="rgba(255,255,255,0.15)">execute or not — irreversible · ephemeral world</text>
+
+    <!-- ═══ LEFT SIDEBAR: SATELLITES ═══ -->
+    <g opacity="0.7">
+      <text x="110" y="165" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.2)" letter-spacing="2">SATELLITES</text>
+      <text x="110" y="177" text-anchor="middle" font-family="Inter" font-size="6.5" fill="rgba(255,255,255,0.1)">observe only · capped authority</text>
+
+      <circle cx="80" cy="210" r="8" fill="none" stroke="rgba(255,200,50,0.2)" stroke-width="0.6" class="pulse-slow"/>
+      <text x="96" y="213" font-family="JetBrains Mono" font-size="7" fill="rgba(255,200,50,0.35)">REGIME</text>
+
+      <circle cx="80" cy="240" r="8" fill="none" stroke="rgba(255,200,50,0.2)" stroke-width="0.6" class="pulse-slow" style="animation-delay:0.5s"/>
+      <text x="96" y="243" font-family="JetBrains Mono" font-size="7" fill="rgba(255,200,50,0.35)">MACRO</text>
+
+      <circle cx="80" cy="270" r="8" fill="none" stroke="rgba(255,200,50,0.2)" stroke-width="0.6" class="pulse-slow" style="animation-delay:1s"/>
+      <text x="96" y="273" font-family="JetBrains Mono" font-size="7" fill="rgba(255,200,50,0.35)">STRUCT</text>
+
+      <circle cx="80" cy="300" r="8" fill="none" stroke="rgba(255,200,50,0.2)" stroke-width="0.6" class="pulse-slow" style="animation-delay:1.5s"/>
+      <text x="96" y="303" font-family="JetBrains Mono" font-size="7" fill="rgba(255,200,50,0.35)">GENESIS</text>
+
+      <!-- dotted lines to neural field -->
+      <line x1="88" y1="210" x2="370" y2="310" stroke="rgba(255,200,50,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <line x1="88" y1="240" x2="370" y2="315" stroke="rgba(255,200,50,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <line x1="88" y1="270" x2="370" y2="320" stroke="rgba(255,200,50,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <line x1="88" y1="300" x2="370" y2="325" stroke="rgba(255,200,50,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+    </g>
+
+    <!-- ═══ RIGHT SIDEBAR: OBSERVERS ═══ -->
+    <g opacity="0.7">
+      <text x="1090" y="165" text-anchor="middle" font-family="JetBrains Mono" font-size="8" fill="rgba(255,255,255,0.2)" letter-spacing="2">POST-MORTEM</text>
+      <text x="1090" y="177" text-anchor="middle" font-family="Inter" font-size="6.5" fill="rgba(255,255,255,0.1)">read-only · never intervene</text>
+
+      <circle cx="1120" cy="215" r="8" fill="none" stroke="rgba(255,100,100,0.2)" stroke-width="0.6" class="pulse-slow"/>
+      <text x="1104" y="218" text-anchor="end" font-family="JetBrains Mono" font-size="7" fill="rgba(255,100,100,0.35)">RA-COH</text>
+
+      <circle cx="1120" cy="245" r="8" fill="none" stroke="rgba(255,100,100,0.2)" stroke-width="0.6" class="pulse-slow" style="animation-delay:0.7s"/>
+      <text x="1104" y="248" text-anchor="end" font-family="JetBrains Mono" font-size="7" fill="rgba(255,100,100,0.35)">RA-SYNC</text>
+
+      <circle cx="1120" cy="275" r="8" fill="none" stroke="rgba(255,100,100,0.2)" stroke-width="0.6" class="pulse-slow" style="animation-delay:1.4s"/>
+      <text x="1104" y="278" text-anchor="end" font-family="JetBrains Mono" font-size="7" fill="rgba(255,100,100,0.35)">RA-DIV</text>
+
+      <circle cx="1120" cy="305" r="8" fill="none" stroke="rgba(255,100,100,0.2)" stroke-width="0.6" class="pulse-slow" style="animation-delay:2.1s"/>
+      <text x="1104" y="308" text-anchor="end" font-family="JetBrains Mono" font-size="7" fill="rgba(255,100,100,0.35)">POLICE</text>
+
+      <!-- dotted lines from execution area -->
+      <line x1="830" y1="310" x2="1112" y2="215" stroke="rgba(255,100,100,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <line x1="830" y1="320" x2="1112" y2="245" stroke="rgba(255,100,100,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <line x1="830" y1="330" x2="1112" y2="275" stroke="rgba(255,100,100,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+      <line x1="830" y1="340" x2="1112" y2="305" stroke="rgba(255,100,100,0.06)" stroke-width="0.5" stroke-dasharray="2 4"/>
+    </g>
+
+    <!-- ═══ TRAFFIC LIGHT ═══ -->
+    <g transform="translate(252, 400)">
+      <rect x="0" y="0" width="50" height="80" rx="8" fill="rgba(255,255,255,0.02)" stroke="rgba(255,255,255,0.1)" stroke-width="0.6"/>
+      <circle cx="25" cy="20" r="8" fill="rgba(0,255,100,0.15)" stroke="rgba(0,255,100,0.3)" stroke-width="0.5" class="pulse-node"/>
+      <circle cx="25" cy="42" r="8" fill="rgba(255,220,0,0.08)" stroke="rgba(255,220,0,0.15)" stroke-width="0.5"/>
+      <circle cx="25" cy="64" r="8" fill="rgba(255,50,50,0.08)" stroke="rgba(255,50,50,0.15)" stroke-width="0.5"/>
+      <text x="25" y="92" text-anchor="middle" font-family="JetBrains Mono" font-size="6.5" fill="rgba(255,255,255,0.2)">CELEBRITY</text>
+      <text x="25" y="101" text-anchor="middle" font-family="Inter" font-size="5.5" fill="rgba(255,255,255,0.1)">flow control</text>
+    </g>
+
+    <!-- ═══ INSPECTOR (soft-read) ═══ -->
+    <g transform="translate(900, 410)">
+      <rect x="0" y="0" width="80" height="40" rx="4" fill="rgba(255,255,255,0.02)" stroke="rgba(0, 229, 255, 0.12)" stroke-width="0.5"/>
+      <text x="40" y="18" text-anchor="middle" font-family="JetBrains Mono" font-size="7" fill="rgba(0, 229, 255, 0.4)">INSPECTOR</text>
+      <text x="40" y="30" text-anchor="middle" font-family="Inter" font-size="6" fill="rgba(0, 229, 255, 0.2)">ε ≤ 0.35 · soft-read</text>
+      <line x1="0" y1="20" x2="-50" y2="180" stroke="rgba(0,229,255,0.04)" stroke-width="0.5" stroke-dasharray="2 4" transform="translate(0,-180)"/>
+    </g>
+
+    <!-- ═══ HERO TEXT ═══ -->
+    <text x="600" y="568" text-anchor="middle" font-family="Inter" font-size="18" fill="rgba(255,255,255,0.65)" font-weight="300" letter-spacing="4">"This system does not decide. It survives."</text>
+
+  </svg>
 </div>
 
-<div class="connector-line"><span class="arrow">&#9660;</span></div>
-<div class="flow-label">SUPPORT LAYERS</div>
+<div class="watermark">72 integrity checks · all pass</div>
 
-<div class="bottom-row">
+<script>
+const canvas = document.getElementById('bgCanvas');
+const ctx = canvas.getContext('2d');
+canvas.width = 1200;
+canvas.height = 675;
 
-  <div class="support memory-dept">
-    <div class="dept-name">EXPERIENCE MEMORY</div>
-    <div class="dept-sub">Hippocampus</div>
-    <div class="dept-role">Records past performance, accelerates re-emergence</div>
-    <div class="dept-auth">&#10060; No commands &nbsp; &#10060; No penalties &mdash; speaks only of the past</div>
-  </div>
+const particles = [];
+for (let i = 0; i < 80; i++) {
+  particles.push({
+    x: Math.random() * 1200,
+    y: Math.random() * 675,
+    r: Math.random() * 1.2 + 0.3,
+    vx: (Math.random() - 0.5) * 0.15,
+    vy: (Math.random() - 0.5) * 0.15,
+    alpha: Math.random() * 0.15 + 0.02
+  });
+}
 
-  <div class="support ops-dept">
-    <div class="dept-name">EXPOSURE SCHEDULER</div>
-    <div class="dept-sub">Operations</div>
-    <div class="dept-role">LIVE / SHADOW path separation<br>Based on energy &middot; validation rate &middot; experience</div>
-    <div class="dept-auth">Adjusts execution priority only &mdash; physics unchanged</div>
-  </div>
+function drawBg() {
+  ctx.clearRect(0, 0, 1200, 675);
 
-  <div class="support ext-dept">
-    <div class="dept-name">PnL OVERLAY</div>
-    <div class="dept-sub">External Dashboard</div>
-    <div class="dept-role">Performance display only<br>For humans &middot; reports &middot; demonstrations</div>
-    <div class="dept-auth">&#10060; No engine access &mdash; read-only</div>
-  </div>
+  const grad = ctx.createRadialGradient(600, 300, 50, 600, 300, 500);
+  grad.addColorStop(0, 'rgba(10, 15, 30, 0.3)');
+  grad.addColorStop(1, 'rgba(10, 10, 15, 0)');
+  ctx.fillStyle = grad;
+  ctx.fillRect(0, 0, 1200, 675);
 
-</div>
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0) p.x = 1200;
+    if (p.x > 1200) p.x = 0;
+    if (p.y < 0) p.y = 675;
+    if (p.y > 675) p.y = 0;
 
-<div class="summary">
-  <div class="summary-line"><span class="tag left">Left Brain</span> &ldquo;produces facts&rdquo;</div>
-  <div class="summary-line"><span class="tag right">Right Brain</span> &ldquo;speaks meaning&rdquo;</div>
-  <div class="summary-line"><span class="tag mem">Memory</span> &ldquo;remembers the past&rdquo;</div>
-  <div class="summary-line"><span class="tag ops">Operations</span> &ldquo;distributes opportunity&rdquo;</div>
-  <div class="summary-line"><span class="tag core-c">SOAR Core</span> alone &ldquo;decides&rdquo;</div>
-  <div class="summary-line"><span class="tag core-c">Responsibility</span> always belongs to the one who decided &mdash; SOAR Core</div>
-</div>
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(150, 200, 255, ${p.alpha})`;
+    ctx.fill();
+  });
 
-<div class="seal-block">
-  <div class="stamp">DESIGN SEALED</div>
-  <div class="check">
-    Missing departments &mdash; none<br>
-    Authority overlap &mdash; none<br>
-    Judgment contamination &mdash; none<br>
-    Adding more would produce noise, not intelligence
-  </div>
-</div>
-
-</div>
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 80) {
+        ctx.beginPath();
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.strokeStyle = `rgba(100, 180, 255, ${0.03 * (1 - dist / 80)})`;
+        ctx.lineWidth = 0.3;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawBg);
+}
+drawBg();
+</script>
 </body>
 </html>
