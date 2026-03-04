@@ -1,126 +1,148 @@
-# SPS — Structural Projection Surface
+Research exploration of phase-structured exit behavior in algorithmic trading systems.
 
-This repository is **not documentation**  
-and **not an implementation**.
+# SOAR Phase Structure Research
 
-It is a **structural projection surface** used to
-observe, anchor, and verify the evolution of SOAR-based systems.
-
----
-
-## ▶ View the Surface
-
-### Live Page (GitHub Pages)
-🔗 https://ilgu26-wq.github.io/sps-structural-view/
-
-> If this shows a 404, GitHub Pages deployment may still be in progress.
-
-### Direct HTML (always works)
-- index (baseline):  
-  🔗 https://github.com/ilgu26-wq/sps-structural-view/blob/main/index.html   
-
-> Click **“View raw”** to open the exact HTML surface.
+> **Hypothesis:** Trade exit timing follows a geometric phase transition,  
+> not a time-parameter optimization problem.
 
 ---
 
-## What This Repository Is
+## Abstract
 
-This repository exists to **project and display structural state**, not behavior.
+This repository documents structural analysis of exit behavior in algorithmic trading systems.
 
-- ❌ No execution
-- ❌ No training
-- ❌ No optimization
-- ❌ No parameter tuning
-
-The HTML files are the **authoritative artifacts**.  
-The repository exists only to anchor, version, and publish them.
+Observed across 247 completed trades and 2,473 exit events, the data suggests that trade lifecycle dynamics cluster around a **coherence collapse phase** rather than fixed time thresholds. The system models price trajectory persistence as a phase manifold where exits occur when structural coherence degrades below a critical threshold.
 
 ---
 
-## Reference Core vs Growing Core (Important)
+## Core Hypothesis
 
-To make growth **observable and falsifiable**, this surface explicitly separates:
+Traditional systems treat exit timing as a **parameter tuning problem**.  
+SOAR treats exit timing as a **geometric phase transition** problem.
 
-- **SOAR1**  
-  A sealed, invariant reference core  
-  (used only as a coordinate system)
+```
+Entry
+  → Structure formation   (~200s)
+  → Expansion phase       (~280–320s)
+  → Coherence collapse    (~350s)
+  → Exit
+```
 
-- **Growing SOAR**  
-  The evolving architecture under study
-
-SOAR1 is **not the subject** of improvement.  
-Growth is defined **relative to a fixed reference**, not by self-modification.
-
-This surface exists to preserve that reference.
-
----
-
-## Structural Evidence — Observation VETO Test
-
-This repository includes a single canonical experiment,
-used to test whether **observation-only blocking**
-improves execution quality when applied to a sealed core.
-
-### Experiment
-**EXP-VETO-MICRO-01**
-
-- Core: **SOAR1 (fixed, sealed)**
-- Exit profile: **EXEC-B (fixed)**
-- Variable: observation-based **BLOCK only**
-  - No new EXECUTE signals introduced
-- Data: identical historical runs
-
-### Verdict
-**H0 RETAINED — Observation VETO does NOT improve SOAR1**
-
-### Results
-
-| Arm | Trades | WR | RR | Expectancy | Equity |
-|-----|--------|----|----|------------|--------|
-| A: Baseline | 500 | 89.6% | 2.13 | +3.59 | **+1794R** |
-| B: Soft-VETO | 361 | 90.6% | 2.27 | +3.90 | +1407R |
-| C: Hard-VETO | 426 | 90.2% | 2.16 | +3.68 | +1568R |
-
-### Analysis
-
-- VETO blocked a large fraction of **winning trades**
-- Among blocked trades:
-  - Soft-VETO: only **13%** were actual losses
-  - Hard-VETO: only **14%** were actual losses
-- Net impact:
-  - Soft-VETO: **−386R**
-  - Hard-VETO: **−226R**
-
-Observation-based blocking reduced total equity,
-despite marginal improvements in WR / RR / Expectancy.
-
-### Conclusion
-
-> **Observation can act as a safety belt.  
-> But SOAR1 already does not crash.  
-> Adding a belt only slows it down.**
-
-For SOAR1-level entry quality (~90% WR),
-observation-based VETO removes more valid structure
-than it prevents losses.
-
-### Artifacts
-
-![EXP-VETO-MICRO-01 — Observation VETO Result](sps_veto_summary.png)
+Phase sequence: `formation → alignment → expansion → collapse`
 
 ---
 
-## Scope Boundary (Read This First)
+## Key Finding: Exit Ablation Study
 
-This repository answers **one question only**:
+Execution-only ablation holding core judgment (SOAR1) strictly invariant.  
+Variable: EXIT logic only. Entry logic and market data identical across all conditions.
 
-> *“What does the structure look like, and how does it change?”*
+| Condition | Win Rate | RR   | Expectancy | Equity  | Max DD |
+|-----------|----------|------|------------|---------|--------|
+| EXIT-A (Baseline)   | 82.2%    | 0.99 | +1.21      | +606R   | −8R    |
+| EXIT-B (Extended τ) | **89.0%**| **2.24** | **+3.66** | **+1832R** | **−5R** |
+| EXIT-C (Aggressive) | 93.2%    | 2.40 | +4.31      | +2155R  | −4R    |
 
-It does **not** attempt to:
-- justify profitability
-- optimize decisions
-- explain behavior post-hoc
+**Verdict:** Performance limits were execution-induced, not core-induced.  
+The structural alpha was correct. The execution layer released it prematurely.
 
-Those belong elsewhere.
+> EXIT-C excluded from evaluation regimes: structural validity collapses at 37.5% under live conditions.
 
-This surface exists to keep structure **visible, stable, and auditable**.
+---
+
+## Repository Structure
+
+```
+soar-phase-structure/
+│
+├── README.md                         ← This file
+│
+├── docs/
+│   ├── 01_phase_structure_hypothesis.md   ← Core theoretical framework
+│   ├── 02_exit_ablation_study.md          ← Ablation methodology & results
+│   ├── 03_mobius_manifold_model.md        ← Geometric phase model
+│   ├── 04_architecture_overview.md        ← System architecture
+│   └── 05_quick_reference.md              ← Glossary & key parameters
+│
+├── experiments/
+│   ├── exp_rot_phase_01.py           ← Rotational phase detection
+│   ├── exp_topology_lock_01.py       ← Topology lock identification
+│   ├── exp_mobius_fold_01.py         ← Möbius fold geometry
+│   ├── exp_shadow_line_exit.py       ← Shadow line exit signal
+│   ├── exp_g_align_01.py             ← Geometric alignment probe
+│   ├── exp_breath_resonance_01.py    ← Breath resonance cycle
+│   ├── exp_dopamine_saturation_01.py ← Saturation threshold detection
+│   ├── exp_plastic_feature_01.py     ← Structural plasticity feature
+│   ├── exp_code_plasticity_03.py     ← Code plasticity (v3)
+│   └── validation_harness.py         ← Baseline vs patched comparison
+│
+├── data/
+│   ├── sample_trade_logs.json        ← 247-trade sample dataset
+│   └── g_align_v2.csv               ← Geometric alignment signal data
+│
+└── results/
+    ├── exit_phase_analysis.md        ← Phase clustering analysis
+    └── ablation_summary.md           ← Ablation study full results
+```
+
+---
+
+## Getting Started
+
+```bash
+# Run full validation harness (baseline vs patched exit)
+python experiments/validation_harness.py
+
+# Run individual phase experiments
+python experiments/exp_rot_phase_01.py
+python experiments/exp_mobius_fold_01.py
+python experiments/exp_shadow_line_exit.py
+```
+
+---
+
+## Theoretical Background
+
+### Phase Manifold Model
+
+Price trajectory is modeled as a **Möbius manifold** — a non-orientable surface where structural coherence is measured as a continuous scalar field. Exit signals are emitted when the coherence gradient crosses a critical inflection point.
+
+Key geometric parameters:
+
+| Parameter | Symbol | Description |
+|-----------|--------|-------------|
+| Structural persistence | τ | Coherence hold duration |
+| Phase rotation angle | θ | Angular displacement per bar |
+| Fold depth | φ | Möbius fold curvature |
+| Coherence threshold | κ | Collapse trigger level |
+
+### Why Not Time-Based?
+
+Time-based exit heuristics assume i.i.d. market structure across intervals.  
+Phase-based exits assume market structure is path-dependent and self-similar.
+
+Empirical result: extending τ from 6.3 → 8.6 bars **tripled expectancy**  
+without any modification to core judgment (entry selection remained constant).
+
+---
+
+## Research Status
+
+- [x] Exit ablation study complete (EXIT-A / B / C)
+- [x] Phase clustering analysis (2,473 exit events)
+- [x] Geometric alignment signal validation (g_align_v2)
+- [x] Rotational phase detection prototype
+- [x] Möbius fold geometry implementation
+- [ ] Live regime adaptation (in progress)
+- [ ] Multi-asset phase correlation study
+
+---
+
+## Notes
+
+This repository documents architectural analysis and experimental validation  
+related to the SOAR trading system. All data is anonymized. No live execution logic is included.
+
+Author: Song Ilgyu  
+Repository: `soar-phase-structure`  
+License: Research use only

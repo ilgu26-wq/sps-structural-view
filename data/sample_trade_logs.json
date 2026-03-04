@@ -1,0 +1,22 @@
+[
+  {"trade_id": "T0001", "entry_time": 34200.0, "direction": "long",  "entry_price": 142.30, "structural_anchor": 0.72, "phase_at_entry": 0, "true_r_multiple": 3.20, "duration_true": 312.0},
+  {"trade_id": "T0002", "entry_time": 35100.0, "direction": "short", "entry_price": 141.85, "structural_anchor": 0.68, "phase_at_entry": 0, "true_r_multiple": 1.80, "duration_true": 245.0},
+  {"trade_id": "T0003", "entry_time": 36000.0, "direction": "long",  "entry_price": 143.10, "structural_anchor": 0.81, "phase_at_entry": 0, "true_r_multiple": 4.60, "duration_true": 388.0},
+  {"trade_id": "T0004", "entry_time": 37200.0, "direction": "long",  "entry_price": 144.20, "structural_anchor": 0.55, "phase_at_entry": 0, "true_r_multiple": -0.80, "duration_true": 198.0},
+  {"trade_id": "T0005", "entry_time": 38400.0, "direction": "short", "entry_price": 143.75, "structural_anchor": 0.74, "phase_at_entry": 0, "true_r_multiple": 2.40, "duration_true": 290.0},
+  {"trade_id": "T0006", "entry_time": 39600.0, "direction": "long",  "entry_price": 145.30, "structural_anchor": 0.88, "phase_at_entry": 0, "true_r_multiple": 6.10, "duration_true": 445.0},
+  {"trade_id": "T0007", "entry_time": 40800.0, "direction": "long",  "entry_price": 146.20, "structural_anchor": 0.62, "phase_at_entry": 0, "true_r_multiple": 1.50, "duration_true": 230.0},
+  {"trade_id": "T0008", "entry_time": 42000.0, "direction": "short", "entry_price": 145.80, "structural_anchor": 0.70, "phase_at_entry": 0, "true_r_multiple": -1.20, "duration_true": 210.0},
+  {"trade_id": "T0009", "entry_time": 43200.0, "direction": "long",  "entry_price": 147.10, "structural_anchor": 0.83, "phase_at_entry": 0, "true_r_multiple": 5.20, "duration_true": 410.0},
+  {"trade_id": "T0010", "entry_time": 44400.0, "direction": "short", "entry_price": 146.60, "structural_anchor": 0.77, "phase_at_entry": 0, "true_r_multiple": 3.80, "duration_true": 335.0},
+  {"trade_id": "T0011", "entry_time": 45600.0, "direction": "long",  "entry_price": 148.30, "structural_anchor": 0.91, "phase_at_entry": 0, "true_r_multiple": 7.40, "duration_true": 490.0},
+  {"trade_id": "T0012", "entry_time": 46800.0, "direction": "long",  "entry_price": 149.10, "structural_anchor": 0.58, "phase_at_entry": 0, "true_r_multiple": -0.60, "duration_true": 185.0},
+  {"trade_id": "T0013", "entry_time": 48000.0, "direction": "short", "entry_price": 148.70, "structural_anchor": 0.73, "phase_at_entry": 0, "true_r_multiple": 2.90, "duration_true": 305.0},
+  {"trade_id": "T0014", "entry_time": 49200.0, "direction": "long",  "entry_price": 150.20, "structural_anchor": 0.86, "phase_at_entry": 0, "true_r_multiple": 5.80, "duration_true": 420.0},
+  {"trade_id": "T0015", "entry_time": 50400.0, "direction": "short", "entry_price": 149.80, "structural_anchor": 0.65, "phase_at_entry": 0, "true_r_multiple": 1.20, "duration_true": 218.0},
+  {"trade_id": "T0016", "entry_time": 51600.0, "direction": "long",  "entry_price": 151.40, "structural_anchor": 0.79, "phase_at_entry": 0, "true_r_multiple": 4.10, "duration_true": 362.0},
+  {"trade_id": "T0017", "entry_time": 52800.0, "direction": "long",  "entry_price": 152.20, "structural_anchor": 0.84, "phase_at_entry": 0, "true_r_multiple": 5.50, "duration_true": 405.0},
+  {"trade_id": "T0018", "entry_time": 54000.0, "direction": "short", "entry_price": 151.90, "structural_anchor": 0.69, "phase_at_entry": 0, "true_r_multiple": -1.50, "duration_true": 192.0},
+  {"trade_id": "T0019", "entry_time": 55200.0, "direction": "long",  "entry_price": 153.10, "structural_anchor": 0.78, "phase_at_entry": 0, "true_r_multiple": 3.60, "duration_true": 340.0},
+  {"trade_id": "T0020", "entry_time": 56400.0, "direction": "short", "entry_price": 152.70, "structural_anchor": 0.92, "phase_at_entry": 0, "true_r_multiple": 6.80, "duration_true": 468.0}
+]
